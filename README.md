@@ -1,16 +1,9 @@
 Cocos2dxFromFlash
 =================
 
-Flashからcocos2dxに変換するツールです。
+###Introduction
 
-対応Ver
-読み込み
-Flash CS5〜
-
-書き出し
-cocos2d-x v2.x
-cocos2d-x v3.x
-
+Flashからcocos2d-xに変換するツールです。
 複数ある画面サイズに対応するため、
 top , center , bottom各種相対ポジション対応
 各種Animation出力対応
@@ -21,5 +14,19 @@ top , center , bottom各種相対ポジション対応
 もちろんキャラクターのアニメーションのような複雑な組み合わせ、
 腕の動きのような中心点がズレたアニメーションでも出力可能です。
 
-開発はbitbucketのプライベートリポジトリで行っています。
 
+###Support
+
+対応Ver
+Input
+Flash CS5〜
+
+Output
+cocos2d-x v2.x
+cocos2d-x v3.x
+のソースコード
+
+###etc
+
+開発はbitbucketのプライベートリポジトリで行っています。
+そろそろコッチに移行したい。
