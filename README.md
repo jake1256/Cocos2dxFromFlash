@@ -4,12 +4,25 @@ Cocos2dxFromFlash
 ###Introduction
 
 Flashからcocos2d-xに変換するツールです。
+
 ・画面全体のレイアウトをFlashで配置し、cocos2d-xにエクスポート
+
 ・キャラクターのアニメーションをFlashで制作し、エクスポート
+
 などが可能です。
+
+![alt flash1](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/flash1.png)
 
 複数ある画面サイズに対応するため、
 top , center , bottom各種相対ポジション対応
+
+iphone4(640 x 960)
+![alt 640x960](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS1.png)
+
+iphone5(640 x 1136)
+![alt flash1](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS2.png)
+
+(上下のメニューがそのまま張り付いていて、その他の部分は相対的に位置を補完します）
 
 各種Animation出力対応
 
