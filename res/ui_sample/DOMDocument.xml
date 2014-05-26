@@ -1,0 +1,168 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="640" height="960" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.1 build 226" majorVersion="13" minorVersion="1" buildNumber="226" objectsSnapTo="false" viewAngle3D="62.4108334222142" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
+     <media>
+          <DOMBitmapItem name="arrow_left.png" itemID="5381a95a-00000066" sourceExternalFilepath="./LIBRARY/arrow-left.png" sourceLastImported="1401009113" sourcePlatform="macintosh" externalFileCRC32="3912183737" externalFileSize="8273" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="arrow_left.png" bitmapDataHRef="M 7 1401001599.dat" frameRight="5120" frameBottom="5120"/>
+          <DOMBitmapItem name="arrow_right.png" itemID="5381a954-00000065" sourceExternalFilepath="./LIBRARY/arrow-right.png" sourceLastImported="1401009113" sourcePlatform="macintosh" externalFileCRC32="582852554" externalFileSize="8119" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="arrow_right.png" bitmapDataHRef="M 5 1401001279.dat" frameRight="5120" frameBottom="5120"/>
+          <DOMBitmapItem name="bg.png" itemID="53819861-00000060" sourceExternalFilepath="./LIBRARY/bg.png" sourceLastImported="1401002044" sourcePlatform="macintosh" externalFileCRC32="1132474783" externalFileSize="266915" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="bg.png" bitmapDataHRef="M 8 1401002081.dat" frameRight="6400" frameBottom="9600"/>
+          <DOMBitmapItem name="btn_std.png" itemID="5381a94f-00000064" sourceExternalFilepath="./LIBRARY/btn-std.png" sourceLastImported="1401009113" sourcePlatform="macintosh" externalFileCRC32="2057497414" externalFileSize="31783" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="btn_std.png" bitmapDataHRef="M 1 1401000302.dat" frameRight="6720" frameBottom="1280"/>
+          <DOMBitmapItem name="f015.png" itemID="538195a2-0000004f" sourceExternalFilepath="./LIBRARY/f015.png" sourceLastImported="1389698874" sourcePlatform="macintosh" externalFileCRC32="541579" externalFileSize="443241" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="f015.png" bitmapDataHRef="M 6 1401001378.dat" frameRight="12000" frameBottom="16000"/>
+          <DOMBitmapItem name="info.png" itemID="5381941d-0000003b" sourceExternalFilepath="./LIBRARY/info.png" sourceLastImported="1261479284" sourcePlatform="macintosh" externalFileCRC32="1217313124" externalFileSize="50876" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="info.png" bitmapDataHRef="M 2 1401000745.dat" frameRight="3440" frameBottom="3440"/>
+          <DOMBitmapItem name="status.png" itemID="538193f9-0000003a" sourceExternalFilepath="./LIBRARY/status.png" sourceLastImported="1261482344" sourcePlatform="macintosh" externalFileCRC32="3618466728" externalFileSize="1778" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="status.png" bitmapDataHRef="M 3 1401000838.dat" frameRight="4000" frameBottom="1040"/>
+     </media>
+     <symbols/>
+     <timelines>
+          <DOMTimeline name="シーン 1">
+               <layers>
+                    <DOMLayer name="top" color="#4F80FF" autoNamed="false" layerType="folder"/>
+                    <DOMLayer name="status" color="#FF800A" parentLayerIndex="0" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="status.png">
+                                             <matrix>
+                                                  <Matrix a="2.35127258300781" d="2.35127258300781"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="info" color="#9933CC" parentLayerIndex="0" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="info.png">
+                                             <matrix>
+                                                  <Matrix tx="473.05" ty="-2.55"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="bottom" color="#9933CC" autoNamed="false" layerType="folder"/>
+                    <DOMLayer name="btn_std" color="#4F80FF" parentLayerIndex="3" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="btn_std.png">
+                                             <matrix>
+                                                  <Matrix a="0.47625732421875" d="2.18714904785156" tx="480" ty="820"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="168" y="32"/>
+                                             </transformationPoint>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="btn_std" color="#4F80FF" parentLayerIndex="3" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="btn_std.png">
+                                             <matrix>
+                                                  <Matrix a="0.47625732421875" d="2.18714904785156" tx="320" ty="820"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="168" y="32"/>
+                                             </transformationPoint>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="btn_std" color="#4F80FF" parentLayerIndex="3" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="btn_std.png">
+                                             <matrix>
+                                                  <Matrix a="0.476226806640625" d="2.18714904785156" tx="160" ty="820"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="168" y="32"/>
+                                             </transformationPoint>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="btn_std" color="#4F80FF" parentLayerIndex="3" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="btn_std.png">
+                                             <matrix>
+                                                  <Matrix a="0.476226806640625" d="2.18716430664062" ty="820"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="168" y="32"/>
+                                             </transformationPoint>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="center" color="#FF4F4F" autoNamed="false" layerType="folder"/>
+                    <DOMLayer name="arrow_left" color="#808080" parentLayerIndex="8" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="arrow_left.png">
+                                             <matrix>
+                                                  <Matrix a="0.235885620117188" b="0.2049560546875" c="-0.2049560546875" d="0.235885620117188" tx="44.1" ty="134.35"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="101.25" y="97.25"/>
+                                             </transformationPoint>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="arrow_right" color="#009999" parentLayerIndex="8" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="arrow_right.png">
+                                             <matrix>
+                                                  <Matrix a="0.26068115234375" b="0.172317504882812" c="-0.172317504882812" d="0.26068115234375" tx="560.55" ty="692.2"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="f015" color="#FF4FFF" parentLayerIndex="8" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="f015.png">
+                                             <matrix>
+                                                  <Matrix a="1.08897399902344" d="1.08897399902344" tx="-8.35" ty="122.25"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="bg" color="#669900" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="bg.png">
+                                             <matrix>
+                                                  <Matrix a="2" d="2.00003051757812"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>

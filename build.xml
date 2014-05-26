@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Cocos2dxFromFlash">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/jake/Documents/git-workspace/java/Cocos2dxFromFlash/cocos2dxFromFlash.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.jake.ccxfromflash.main.Main"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/Users/jake/Documents/git-workspace/java/Cocos2dxFromFlash/bin"/>
+        </jar>
+    </target>
+</project>

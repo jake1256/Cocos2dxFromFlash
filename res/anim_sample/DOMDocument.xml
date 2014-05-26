@@ -1,0 +1,260 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="640" height="960" frameRate="12" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.1 build 226" majorVersion="13" minorVersion="1" buildNumber="226" objectsSnapTo="false" viewAngle3D="62.4108334222142" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
+     <media>
+          <DOMBitmapItem name="body.png" itemID="5381c53b-00000030" sourceExternalFilepath="../anim_sample/LIBRARY/body.png" sourceLastImported="1401013137" sourcePlatform="macintosh" externalFileCRC32="1992363645" externalFileSize="7581" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="body.png" bitmapDataHRef="M 7 1401013563.dat" frameRight="1820" frameBottom="2720"/>
+          <DOMBitmapItem name="face.png" itemID="5381c511-00000012" sourceExternalFilepath="../anim_sample/LIBRARY/face.png" sourceLastImported="1401012884" sourcePlatform="macintosh" externalFileCRC32="3420114846" externalFileSize="12569" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="face.png" bitmapDataHRef="M 1 1401013521.dat" frameRight="3380" frameBottom="2400"/>
+          <DOMBitmapItem name="left_arm.png" itemID="5381c511-00000017" sourceExternalFilepath="../anim_sample/LIBRARY/left_arm.png" sourceLastImported="1401013173" sourcePlatform="macintosh" externalFileSize="4850" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="left_arm.png" bitmapDataHRef="M 2 1401013521.dat" frameRight="1460" frameBottom="960"/>
+          <DOMBitmapItem name="left_leg.png" itemID="5381c511-0000001c" sourceExternalFilepath="../anim_sample/LIBRARY/left_leg.png" sourceLastImported="1401013238" sourcePlatform="macintosh" externalFileCRC32="3743149013" externalFileSize="5182" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="left_leg.png" bitmapDataHRef="M 3 1401013521.dat" frameRight="1040" frameBottom="1340"/>
+          <DOMBitmapItem name="right_arm.png" itemID="5381c511-00000021" sourceExternalFilepath="../anim_sample/LIBRARY/right_arm.png" sourceLastImported="1401013333" sourcePlatform="macintosh" externalFileCRC32="564937639" externalFileSize="5672" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="right_arm.png" bitmapDataHRef="M 4 1401013521.dat" frameRight="1740" frameBottom="1060"/>
+          <DOMBitmapItem name="right_leg.png" itemID="5381c511-00000026" sourceExternalFilepath="../anim_sample/LIBRARY/right_leg.png" sourceLastImported="1401013378" sourcePlatform="macintosh" externalFileCRC32="2116643938" externalFileSize="5025" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="right_leg.png" bitmapDataHRef="M 5 1401013521.dat" frameRight="880" frameBottom="1300"/>
+          <DOMBitmapItem name="sword.png" itemID="5381c511-0000002b" sourceExternalFilepath="../anim_sample/LIBRARY/sword.png" sourceLastImported="1401013093" sourcePlatform="macintosh" externalFileCRC32="1377625280" externalFileSize="7114" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="sword.png" bitmapDataHRef="M 6 1401013521.dat" frameRight="1680" frameBottom="4160"/>
+     </media>
+     <symbols>
+          <Include href="body.xml" loadImmediate="false" itemID="5381ce5f-000000db" lastModified="1401015903"/>
+          <Include href="face.xml" loadImmediate="false" itemID="5381ccd0-000000d2" lastModified="1401015504"/>
+          <Include href="left_arm.xml" loadImmediate="false" itemID="5381e835-00000115" lastModified="1401022518"/>
+          <Include href="left_leg.xml" loadImmediate="false" itemID="5381d8f2-000000eb" lastModified="1401018610"/>
+          <Include href="right_arm.xml" loadImmediate="false" itemID="5381d942-000000fc" lastModified="1401018690"/>
+          <Include href="right_leg.xml" loadImmediate="false" itemID="5381d0b3-000000e3" lastModified="1401016499"/>
+          <Include href="sword.xml" loadImmediate="false" itemID="5381d9a6-0000010c" lastModified="1401018790"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="シーン 1">
+               <layers>
+                    <DOMLayer name="face" color="#4F80FF" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="face">
+                                             <matrix>
+                                                  <Matrix tx="322" ty="422"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="face" centerPoint3DX="326" centerPoint3DY="409">
+                                             <matrix>
+                                                  <Matrix tx="326" ty="409"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="body" color="#9933CC" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="body">
+                                             <matrix>
+                                                  <Matrix tx="320" ty="490"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="body" centerPoint3DX="325" centerPoint3DY="483">
+                                             <matrix>
+                                                  <Matrix tx="325" ty="483"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="right_leg" color="#808080" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="right_leg" selected="true">
+                                             <matrix>
+                                                  <Matrix tx="304" ty="549"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="8" y="-10"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="right_leg" centerPoint3DX="319.35" centerPoint3DY="544.25">
+                                             <matrix>
+                                                  <Matrix a="0.897125244140625" b="-0.4417724609375" c="0.4417724609375" d="0.897125244140625" tx="319.5" ty="544.2"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="8.95" y="-17"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="left_leg" color="#009999" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="left_leg">
+                                             <matrix>
+                                                  <Matrix tx="339.5" ty="550"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-7" y="-18"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="left_leg" centerPoint3DX="353.85" centerPoint3DY="537.65">
+                                             <matrix>
+                                                  <Matrix a="0.99090576171875" b="-0.134552001953125" c="0.134552001953125" d="0.99090576171875" tx="353.85" ty="537.75"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-7" y="-18"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="right_arm" color="#FF4FFF" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="right_arm">
+                                             <matrix>
+                                                  <Matrix tx="324.5" ty="483"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-17.5" y="1"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="9" duration="5" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="right_arm" centerPoint3DX="289.95" centerPoint3DY="463.45">
+                                             <matrix>
+                                                  <Matrix a="0.67913818359375" b="0.7340087890625" c="-0.7340087890625" d="0.67913818359375" tx="319.6" ty="496.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-17.5" y="1"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="right_arm" centerPoint3DX="288.65" centerPoint3DY="483.45">
+                                             <matrix>
+                                                  <Matrix a="0.672836303710938" b="-0.739776611328125" c="0.739776611328125" d="0.672836303710938" tx="319.65" ty="451.35"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-17.45" y="1"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="left_arm" color="#FF800A" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="left_arm">
+                                             <matrix>
+                                                  <Matrix tx="370" ty="485.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-18" y="-2"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="9" duration="5" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="left_arm" centerPoint3DX="368.15" centerPoint3DY="491.45">
+                                             <matrix>
+                                                  <Matrix a="0.93988037109375" b="0.34149169921875" c="-0.34149169921875" d="0.93988037109375" tx="368.2" ty="491.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-17.95" y="-2"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="left_arm" centerPoint3DX="367.35" centerPoint3DY="470.75">
+                                             <matrix>
+                                                  <Matrix a="0.898895263671875" b="-0.43817138671875" c="0.43817138671875" d="0.898895263671875" tx="367.2" ty="471.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-18" y="-2"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="sword" color="#669900" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="9" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="sword">
+                                             <matrix>
+                                                  <Matrix tx="282" ty="429"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-27" y="55"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="9" duration="5" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="sword" centerPoint3DX="316.6" centerPoint3DY="412.4">
+                                             <matrix>
+                                                  <Matrix a="0.459060668945312" b="0.888397216796875" c="-0.888397216796875" d="0.459060668945312" tx="336.2" ty="450.7"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-26.95" y="54.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="sword" centerPoint3DX="239.6" centerPoint3DY="461.65">
+                                             <matrix>
+                                                  <Matrix a="0.900421142578125" b="-0.435012817382812" c="0.435012817382812" d="0.900421142578125" tx="278.35" ty="442.65"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-26.95" y="54.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>

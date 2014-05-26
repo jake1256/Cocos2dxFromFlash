@@ -1,0 +1,103 @@
+face->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(14.0 / 12.0 , Point(4.0 , 13.0)),
+MoveBy::create(0.0 / 12.0 , Point(-4.0 , -13.0)),
+NULL),
+NULL)
+)
+);
+body->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(14.0 / 12.0 , Point(5.0 , 7.0)),
+MoveBy::create(0.0 / 12.0 , Point(-5.0 , -7.0)),
+NULL),
+NULL)
+)
+);
+right_leg->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(14.0 / 12.0 , Point(15.5 , 4.8)),
+MoveBy::create(0.0 / 12.0 , Point(-15.5 , -4.8)),
+NULL),
+Sequence::create(
+RotateBy::create(14.0 / 12.0 , -26.2),
+RotateBy::create(0.0 / 12.0 , 26.2),
+NULL),
+NULL)
+)
+);
+left_leg->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(14.0 / 12.0 , Point(14.35 , 12.25)),
+MoveBy::create(0.0 / 12.0 , Point(-14.35 , -12.25)),
+NULL),
+Sequence::create(
+RotateBy::create(14.0 / 12.0 , -7.7),
+RotateBy::create(0.0 / 12.0 , 7.7),
+NULL),
+NULL)
+)
+);
+right_arm->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(9.0 / 12.0 , Point(-4.9 , -13.15)),
+MoveBy::create(5.0 / 12.0 , Point(0.05 , 44.8)),
+MoveBy::create(0.0 / 12.0 , Point(4.85 , -31.65)),
+NULL),
+Sequence::create(
+RotateBy::create(9.0 / 12.0 , 47.2),
+RotateBy::create(5.0 / 12.0 , -94.9),
+RotateBy::create(0.0 / 12.0 , 47.7),
+NULL),
+NULL)
+)
+);
+left_arm->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(9.0 / 12.0 , Point(-1.8 , -6.0)),
+MoveBy::create(5.0 / 12.0 , Point(-1.0 , 20.45)),
+MoveBy::create(0.0 / 12.0 , Point(2.8 , -14.45)),
+NULL),
+Sequence::create(
+RotateBy::create(9.0 / 12.0 , 20.0),
+RotateBy::create(5.0 / 12.0 , -46.0),
+RotateBy::create(0.0 / 12.0 , 26.0),
+NULL),
+NULL)
+)
+);
+sword->runAction(
+RepeatForever::create(
+(ActionInterval*)
+Spawn::create(
+Sequence::create(
+MoveBy::create(9.0 / 12.0 , Point(54.2 , -21.7)),
+MoveBy::create(5.0 / 12.0 , Point(-57.85 , 8.05)),
+MoveBy::create(0.0 / 12.0 , Point(3.65 , 13.65)),
+NULL),
+Sequence::create(
+RotateBy::create(9.0 / 12.0 , 62.7),
+RotateBy::create(5.0 / 12.0 , -88.5),
+RotateBy::create(0.0 / 12.0 , 25.8),
+NULL),
+NULL)
+)
+);

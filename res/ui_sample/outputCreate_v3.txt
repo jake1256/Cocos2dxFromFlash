@@ -1,0 +1,69 @@
+auto bg = Sprite::create("bg.png");
+bg->setPosition(Point(0.0, (visibleSize.height - 960) / 2 + 960.0));
+bg->setAnchorPoint(Point(0.0, 1.0));
+bg->setScaleX(2.0);
+bg->setScaleY(2.0);
+this->addChild(bg);
+
+auto f015 = Sprite::create("f015.png");
+f015->setPosition(Point(-8.3, (visibleSize.height - 960) / 2 + 837.7));
+f015->setAnchorPoint(Point(0.0, 1.0));
+f015->setScaleX(1.089);
+f015->setScaleY(1.089);
+this->addChild(f015);
+
+auto arrow_right = Sprite::create("arrow_right.png");
+arrow_right->setPosition(Point(560.6, (visibleSize.height - 960) / 2 + 267.79999999999995));
+arrow_right->setAnchorPoint(Point(0.0, 1.0));
+arrow_right->setScaleX(0.31249);
+arrow_right->setScaleY(0.31249);
+arrow_right->setRotation(33.47);
+this->addChild(arrow_right);
+
+auto arrow_left = Sprite::create("arrow_left.png");
+arrow_left->setPosition(Point(75.7, (visibleSize.height - 960) / 2 + 795.3));
+arrow_left->setAnchorPoint(Point(0.3955, 0.62));
+arrow_left->setScaleX(0.31249);
+arrow_left->setScaleY(0.31249);
+arrow_left->setRotation(40.99);
+this->addChild(arrow_left);
+
+auto btn_std_3 = Sprite::create("btn_std.png");
+btn_std_3->setPosition(Point(80.0, 70.0));
+btn_std_3->setAnchorPoint(Point(0.5, 0.5));
+btn_std_3->setScaleX(0.4762);
+btn_std_3->setScaleY(2.1872);
+this->addChild(btn_std_3);
+
+auto btn_std_2 = Sprite::create("btn_std.png");
+btn_std_2->setPosition(Point(240.0, 70.0));
+btn_std_2->setAnchorPoint(Point(0.5, 0.5));
+btn_std_2->setScaleX(0.4762);
+btn_std_2->setScaleY(2.1871);
+this->addChild(btn_std_2);
+
+auto btn_std_1 = Sprite::create("btn_std.png");
+btn_std_1->setPosition(Point(400.0, 70.0));
+btn_std_1->setAnchorPoint(Point(0.5, 0.5));
+btn_std_1->setScaleX(0.4763);
+btn_std_1->setScaleY(2.1871);
+this->addChild(btn_std_1);
+
+auto btn_std = Sprite::create("btn_std.png");
+btn_std->setPosition(Point(560.0, 70.0));
+btn_std->setAnchorPoint(Point(0.5, 0.5));
+btn_std->setScaleX(0.4763);
+btn_std->setScaleY(2.1871);
+this->addChild(btn_std);
+
+auto info = Sprite::create("info.png");
+info->setPosition(Point(473.1, visibleSize.height - -2.5));
+info->setAnchorPoint(Point(0.0, 1.0));
+this->addChild(info);
+
+auto status = Sprite::create("status.png");
+status->setPosition(Point(0.0, visibleSize.height - 0.0));
+status->setAnchorPoint(Point(0.0, 1.0));
+status->setScaleX(2.3513);
+status->setScaleY(2.3513);
+this->addChild(status);
