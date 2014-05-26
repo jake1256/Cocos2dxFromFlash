@@ -17,14 +17,20 @@ Flashからcocos2d-xに変換するツールです。
 top , center , bottom各種相対ポジション対応
 
 iphone4(640 x 960)
-![alt 640x960](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS1.png)
+
+![alt ui640x960](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS1.png)
 
 iphone5(640 x 1136)
-![alt flash1](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS2.png)
+
+![alt ui640x1136](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS2.png)
 
 (上下のメニューがそのまま張り付いていて、その他の部分は相対的に位置を補完します）
 
 各種Animation出力対応
+
+![alt flash4](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/flash4.png)
+
+![alt anim1](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/anim1.png);
 
 例えば画面レイアウト製作をした時にnewアイコンだけアニメーションさせたい
 といった使用方法も可能。
