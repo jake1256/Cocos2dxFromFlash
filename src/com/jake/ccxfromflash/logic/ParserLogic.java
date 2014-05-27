@@ -35,7 +35,7 @@ public class ParserLogic {
 	 * @throws Exception
 	 */
 	public List<DOMBitmapItem> parseDOMBitmapItem(Document doc) throws Exception{
-		List<DOMBitmapItem> result = new ArrayList<DOMBitmapItem>();
+		List<DOMBitmapItem> result = new ArrayList<>();
 
 		// DOMDocument.xmlからDOMBitmapItemタグ一覧とIncludeタグ一覧を取り出す
 		NodeList domBitmapItemList 	= doc.getElementsByTagName("DOMBitmapItem");
@@ -139,7 +139,7 @@ public class ParserLogic {
 	 * @return
 	 */
 	public List<DOMLayer> parseDomLayer(Document doc){
-		List<DOMLayer> result = new ArrayList<DOMLayer>();
+		List<DOMLayer> result = new ArrayList<>();
 
 		Element root = doc.getDocumentElement();
 		NodeList domLayerList = root.getElementsByTagName("DOMLayer");
@@ -152,7 +152,7 @@ public class ParserLogic {
 			Element domLayerElement = (Element)domLayerList.item(i);
 
 			domLayer = new DOMLayer();
-			domFrameList = new ArrayList<DOMFrame>();
+			domFrameList = new ArrayList<>();
 
 			String nameStr = Util.getString(domLayerElement, "name");
 			String colorStr = Util.getString(domLayerElement, "color");

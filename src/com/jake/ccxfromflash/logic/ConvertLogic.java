@@ -45,7 +45,7 @@ public class ConvertLogic {
 	}
 
 	public List<CCXObject> convertCcx(List<DOMLayer> domLayerList){
-		List<CCXObject> ccxObjList = new ArrayList<CCXObject>();
+		List<CCXObject> ccxObjList = new ArrayList<>();
 
 		CCXObject ccx = null;
 		DOMBitmapItem dom = null;

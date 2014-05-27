@@ -6,8 +6,21 @@ package com.jake.ccxfromflash.constants;
  *
  */
 public enum CCXVersionType {
-	CCX_2X("outputCreate_v2.txt" , "outputAnimation_v2.txt" , "CC" , "ccp" , "CCSprite*" , "visibleSize.height"),
-	CCX_3X("outputCreate_v3.txt" , "outputAnimation_v3.txt" , "" , "Point" , "auto" , "visibleSize.height")
+	/** cocos2d-x v2.x系の出力文字列 */
+	CCX_2X( "outputCreate_v2.txt" , 
+			"outputAnimation_v2.txt" , 
+			"CC" , 
+			"ccp" , 
+			"CCSprite*" , 
+			"visibleSize.height"),
+			
+	/** cocos2d-x v3.x系の出力文字列 */
+	CCX_3X( "outputCreate_v3.txt" , 
+			"outputAnimation_v3.txt" , 
+			"" , 
+			"Point" , 
+			"auto" , 
+			"visibleSize.height")
 	;
 	
 	/** 生成用ファイル名 */
@@ -61,7 +74,7 @@ public enum CCXVersionType {
 	public String getNewSprite() {
 		return newSprite;
 	}
-
+	
 	public String getWinHeight() {
 		return winHeight;
 	}

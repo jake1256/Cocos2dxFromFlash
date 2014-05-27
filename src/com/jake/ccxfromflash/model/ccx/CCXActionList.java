@@ -23,13 +23,13 @@ public class CCXActionList {
 	public CCXActionList(){
 		hasAction = false;
 
-		delayTimeList = new ArrayList<CCXAction>();
-		moveByList = new ArrayList<CCXAction>();
-		scaleToList = new ArrayList<CCXAction>();
-		rotateToList = new ArrayList<CCXAction>();
-		fadeToList = new ArrayList<CCXAction>();
-		removeList = new ArrayList<CCXAction>();
-		brendModeList = new ArrayList<CCXAction>();
+		delayTimeList = new ArrayList<>();
+		moveByList = new ArrayList<>();
+		scaleToList = new ArrayList<>();
+		rotateToList = new ArrayList<>();
+		fadeToList = new ArrayList<>();
+		removeList = new ArrayList<>();
+		brendModeList = new ArrayList<>();
 	}
 
 	public void addDelayTimeList(CCXAction act){

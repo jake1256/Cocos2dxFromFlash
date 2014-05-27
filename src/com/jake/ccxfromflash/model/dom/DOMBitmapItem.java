@@ -16,19 +16,11 @@ public class DOMBitmapItem {
     private double height;
     private double offsetX;
     private double offsetY;
-
-    public void print(){
-    	System.out.println("--- name[" + name + "] ---");
-    	System.out.println("path[" + path + "]");
-    	System.out.println("width[" + width + "] height[" + height + "]");
-    	System.out.println("offsetX[" + offsetX + "] offsetY[" + offsetY + "]");
-    }
-
     // nameが一致するDomLayerを紐付ける
     private List<DOMLayer> domLayerList;
     
     public DOMBitmapItem(){
-    	domLayerList = new ArrayList<DOMLayer>();
+    	domLayerList = new ArrayList<>();
     }
 
 	/**
@@ -118,6 +110,11 @@ public class DOMBitmapItem {
 		this.domLayerList.add(domLayer);
 	}
 
-
+    public void print(){
+    	System.out.println("--- name[" + name + "] ---");
+    	System.out.println("path[" + path + "]");
+    	System.out.println("width[" + width + "] height[" + height + "]");
+    	System.out.println("offsetX[" + offsetX + "] offsetY[" + offsetY + "]");
+    }
 
 }

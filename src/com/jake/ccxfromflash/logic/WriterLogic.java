@@ -7,10 +7,10 @@ import java.util.List;
 
 import com.jake.ccxfromflash.constants.CCXVersionType;
 import com.jake.ccxfromflash.constants.Config;
-import com.jake.ccxfromflash.constants.PositionType;
 import com.jake.ccxfromflash.model.ccx.CCXAction;
 import com.jake.ccxfromflash.model.ccx.CCXActionList;
 import com.jake.ccxfromflash.model.ccx.CCXObject;
+import com.jake.ccxfromflash.print.CCXPrintAbstract;
 import com.jake.ccxfromflash.util.Util;
 
 /**
@@ -44,36 +44,15 @@ public class WriterLogic {
 		StringBuilder sb = new StringBuilder();
 
 		String name = null;
+		CCXObject ccx = null;
+		CCXPrintAbstract printCCX;
+		String result = null;
 		for(int i = ccxObjectList.size() - 1 ; i > -1 ; i--){
-			CCXObject ccx = ccxObjectList.get(i);
-			switch (ccx.getObjType()) {
-
-				// 出力を振り分ける…振り分ける…頑張る
-				case SPRITE:
-				case TILE_SPRITE:
-				case TEXT:
-				case BTN:
-					name = ccx.getName() + ((ccx.getIndex() == 0) ? "" : "_" + ccx.getIndex());
-					Util.appendStr(sb , verType.getNewSprite() + " " + name + " = " + verType.getCcxCC() + "Sprite::create(\"" + ccx.getName() + ".png\");");
-					Util.appendStr(sb , name + "->setPosition(" + createPositionString(ccx) + ");");
-					Util.appendStr(sb , name + "->setAnchorPoint(" + verType.getCcxPos() + "(" + Util.roundSF(ccx.getAnchorX() , 4) + ", " + Util.roundSF(ccx.getAnchorY() , 3) + "));");
-					if(ccx.getScaleX() != 1.0) Util.appendStr(sb , name + "->setScaleX(" + ccx.getScaleX() + ");");
-					if(ccx.getScaleY() != 1.0) Util.appendStr(sb , name + "->setScaleY(" + ccx.getScaleY() + ");");
-					if(ccx.getRotate() != 0.0) Util.appendStr(sb , name + "->setRotation(" + ccx.getRotate() + ");");
-					if(ccx.getOpacity() != 255.0) Util.appendStr(sb , name + "->setOpacity(" + ccx.getOpacity() + ");");
-					Util.appendStr(sb , "this->addChild(" + name + ");");
-					Util.appendStr(sb , "");
-					break;
-
-	//			case TEXT:
-	//				break;
-	//			case BTN:
-	//				break;
-				case NONE:
-					break;
-				default:
-					break;
-			}
+			ccx = ccxObjectList.get(i);
+			name = ccx.getName() + ((ccx.getIndex() == 0) ? "" : "_" + ccx.getIndex());
+			printCCX = ccx.getObjType().getPrintClass();
+			result = printCCX.print(ccx, name, verType);
+			sb.append(result);
 		}
 
 		return sb;
@@ -181,33 +160,7 @@ public class WriterLogic {
 		}
 	}
 
-	/**
-	 * top,center,bottomに対応したpositionを出力
-	 * @param ccx
-	 * @return
-	 */
-	private String createPositionString(CCXObject ccx) {
-		String positionYStr;
-		if(Config.isCenter){
-			// centerの時はPositionTypeを無視
-			return verType.getCcxPos() + "(" +
-					Util.roundSF((ccx.getPosX() - Util.getCenterW()) , 4) +
-					", " +
-					Util.roundSF((ccx.getPosY() - Util.getCenterH()) , 4) +
-					")";
-		}else{
-			if(ccx.getPosType() == PositionType.TOP){
-				positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
-			}
-			else if(ccx.getPosType() == PositionType.CENTER){
-				positionYStr = "(" + verType.getWinHeight() + " - 960) / 2 + " + ccx.getPosY();
-			}
-			else{
-				positionYStr = "" + ccx.getPosY();
-			}
-			return verType.getCcxPos() + "(" + ccx.getPosX() + ", " + positionYStr + ")";
-		}
-	}
+
 
 	/**
 	 * ファイルに出力
