@@ -28,33 +28,41 @@ arrow_left->setScaleY(0.31249);
 arrow_left->setRotation(40.99);
 this->addChild(arrow_left);
 
-auto btn_std_3 = Sprite::create("btn_std.png");
+auto btn_std_3 = MenuItemImage::create("btn_std.png" , "btn_std_push.png" , CC_CALLBACK_1(NULL, this));
 btn_std_3->setPosition(Point(80.0, 70.0));
 btn_std_3->setAnchorPoint(Point(0.5, 0.5));
 btn_std_3->setScaleX(0.4762);
 btn_std_3->setScaleY(2.1872);
-this->addChild(btn_std_3);
+auto menu_btn_std_3 = Menu::create(btn_std_3 , NULL);
+menu_btn_std_3->setPosition(Point::ZERO);
+this->addChild(menu_btn_std_3);
 
-auto btn_std_2 = Sprite::create("btn_std.png");
+auto btn_std_2 = MenuItemImage::create("btn_std.png" , "btn_std_push.png" , CC_CALLBACK_1(NULL, this));
 btn_std_2->setPosition(Point(240.0, 70.0));
 btn_std_2->setAnchorPoint(Point(0.5, 0.5));
 btn_std_2->setScaleX(0.4762);
 btn_std_2->setScaleY(2.1871);
-this->addChild(btn_std_2);
+auto menu_btn_std_2 = Menu::create(btn_std_2 , NULL);
+menu_btn_std_2->setPosition(Point::ZERO);
+this->addChild(menu_btn_std_2);
 
-auto btn_std_1 = Sprite::create("btn_std.png");
+auto btn_std_1 = MenuItemImage::create("btn_std.png" , "btn_std_push.png" , CC_CALLBACK_1(NULL, this));
 btn_std_1->setPosition(Point(400.0, 70.0));
 btn_std_1->setAnchorPoint(Point(0.5, 0.5));
 btn_std_1->setScaleX(0.4763);
 btn_std_1->setScaleY(2.1871);
-this->addChild(btn_std_1);
+auto menu_btn_std_1 = Menu::create(btn_std_1 , NULL);
+menu_btn_std_1->setPosition(Point::ZERO);
+this->addChild(menu_btn_std_1);
 
-auto btn_std = Sprite::create("btn_std.png");
+auto btn_std = MenuItemImage::create("btn_std.png" , "btn_std_push.png" , CC_CALLBACK_1(NULL, this));
 btn_std->setPosition(Point(560.0, 70.0));
 btn_std->setAnchorPoint(Point(0.5, 0.5));
 btn_std->setScaleX(0.4763);
 btn_std->setScaleY(2.1871);
-this->addChild(btn_std);
+auto menu_btn_std = Menu::create(btn_std , NULL);
+menu_btn_std->setPosition(Point::ZERO);
+this->addChild(menu_btn_std);
 
 auto info = Sprite::create("info.png");
 info->setPosition(Point(473.1, visibleSize.height - -2.5));

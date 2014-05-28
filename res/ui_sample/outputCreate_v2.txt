@@ -1,0 +1,77 @@
+CCSprite* bg = CCSprite::create("bg.png");
+bg->setPosition(ccp(0.0, (visibleSize.height - 960) / 2 + 960.0));
+bg->setAnchorPoint(ccp(0.0, 1.0));
+bg->setScaleX(2.0);
+bg->setScaleY(2.0);
+this->addChild(bg);
+
+CCSprite* f015 = CCSprite::create("f015.png");
+f015->setPosition(ccp(-8.3, (visibleSize.height - 960) / 2 + 837.7));
+f015->setAnchorPoint(ccp(0.0, 1.0));
+f015->setScaleX(1.089);
+f015->setScaleY(1.089);
+this->addChild(f015);
+
+CCSprite* arrow_right = CCSprite::create("arrow_right.png");
+arrow_right->setPosition(ccp(560.6, (visibleSize.height - 960) / 2 + 267.79999999999995));
+arrow_right->setAnchorPoint(ccp(0.0, 1.0));
+arrow_right->setScaleX(0.31249);
+arrow_right->setScaleY(0.31249);
+arrow_right->setRotation(33.47);
+this->addChild(arrow_right);
+
+CCSprite* arrow_left = CCSprite::create("arrow_left.png");
+arrow_left->setPosition(ccp(75.7, (visibleSize.height - 960) / 2 + 795.3));
+arrow_left->setAnchorPoint(ccp(0.3955, 0.62));
+arrow_left->setScaleX(0.31249);
+arrow_left->setScaleY(0.31249);
+arrow_left->setRotation(40.99);
+this->addChild(arrow_left);
+
+CCMenuItemImage* btn_std_3 = CCMenuItemImage::create("btn_std.png" , "btn_std_push.png" , this , menu_selector(NULL) );
+btn_std_3->setPosition(ccp(80.0, 70.0));
+btn_std_3->setAnchorPoint(ccp(0.5, 0.5));
+btn_std_3->setScaleX(0.4762);
+btn_std_3->setScaleY(2.1872);
+CCMenu* menu_btn_std_3 = CCMenu::create(btn_std_3 , NULL);
+menu_btn_std_3->setPosition( CCPointZero );
+this->addChild(menu_btn_std_3);
+
+CCMenuItemImage* btn_std_2 = CCMenuItemImage::create("btn_std.png" , "btn_std_push.png" , this , menu_selector(NULL) );
+btn_std_2->setPosition(ccp(240.0, 70.0));
+btn_std_2->setAnchorPoint(ccp(0.5, 0.5));
+btn_std_2->setScaleX(0.4762);
+btn_std_2->setScaleY(2.1871);
+CCMenu* menu_btn_std_2 = CCMenu::create(btn_std_2 , NULL);
+menu_btn_std_2->setPosition( CCPointZero );
+this->addChild(menu_btn_std_2);
+
+CCMenuItemImage* btn_std_1 = CCMenuItemImage::create("btn_std.png" , "btn_std_push.png" , this , menu_selector(NULL) );
+btn_std_1->setPosition(ccp(400.0, 70.0));
+btn_std_1->setAnchorPoint(ccp(0.5, 0.5));
+btn_std_1->setScaleX(0.4763);
+btn_std_1->setScaleY(2.1871);
+CCMenu* menu_btn_std_1 = CCMenu::create(btn_std_1 , NULL);
+menu_btn_std_1->setPosition( CCPointZero );
+this->addChild(menu_btn_std_1);
+
+CCMenuItemImage* btn_std = CCMenuItemImage::create("btn_std.png" , "btn_std_push.png" , this , menu_selector(NULL) );
+btn_std->setPosition(ccp(560.0, 70.0));
+btn_std->setAnchorPoint(ccp(0.5, 0.5));
+btn_std->setScaleX(0.4763);
+btn_std->setScaleY(2.1871);
+CCMenu* menu_btn_std = CCMenu::create(btn_std , NULL);
+menu_btn_std->setPosition( CCPointZero );
+this->addChild(menu_btn_std);
+
+CCSprite* info = CCSprite::create("info.png");
+info->setPosition(ccp(473.1, visibleSize.height - -2.5));
+info->setAnchorPoint(ccp(0.0, 1.0));
+this->addChild(info);
+
+CCSprite* status = CCSprite::create("status.png");
+status->setPosition(ccp(0.0, visibleSize.height - 0.0));
+status->setAnchorPoint(ccp(0.0, 1.0));
+status->setScaleX(2.3513);
+status->setScaleY(2.3513);
+this->addChild(status);

@@ -3,6 +3,7 @@ package com.jake.ccxfromflash.constants;
 import com.jake.ccxfromflash.print.CCXButtonPrint;
 import com.jake.ccxfromflash.print.CCXPrintAbstract;
 import com.jake.ccxfromflash.print.CCXSpritePrint;
+import com.jake.ccxfromflash.print.CCXTextPrint;
 
 /**
  * オブジェクト種別
@@ -14,31 +15,31 @@ public enum ObjectType {
 	/**
 	 * 画像
 	 */
-	SPRITE(new CCXSpritePrint()),
+	SPRITE(CCXSpritePrint.class),
 
 	/**
 	 * タイル型に配置したい画像
 	 */
-	TILE_SPRITE(new CCXSpritePrint()),
+	TILE_SPRITE(CCXSpritePrint.class),
 
 	/**
 	 * テキスト
 	 */
-	TEXT(new CCXSpritePrint()),
+	TEXT(CCXTextPrint.class),
 
 	/**
 	 * ボタン
 	 */
-	BTN(new CCXButtonPrint()),
+	BTN(CCXButtonPrint.class),
 
 	/**
 	 * どれでもない
 	 */
 	NONE(null);
-	
-	private CCXPrintAbstract printClass;
-	
-	private ObjectType(CCXPrintAbstract printClass){
+
+	private Class<? extends CCXPrintAbstract> printClass;
+
+	private ObjectType(Class<? extends CCXPrintAbstract> printClass){
 		this.printClass = printClass;
 	}
 
@@ -66,6 +67,11 @@ public enum ObjectType {
 	 * @return the printClass
 	 */
 	public CCXPrintAbstract getPrintClass() {
-		return printClass;
+		try {
+			return printClass.newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
