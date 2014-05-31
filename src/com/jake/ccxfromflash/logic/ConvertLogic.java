@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jake.ccxfromflash.constants.ActionType;
+import com.jake.ccxfromflash.constants.CCXLabelAlignment;
 import com.jake.ccxfromflash.constants.Config;
 import com.jake.ccxfromflash.constants.ObjectType;
 import com.jake.ccxfromflash.constants.PositionType;
 import com.jake.ccxfromflash.model.ccx.CCXAction;
 import com.jake.ccxfromflash.model.ccx.CCXActionList;
+import com.jake.ccxfromflash.model.ccx.CCXLabel;
 import com.jake.ccxfromflash.model.ccx.CCXObject;
 import com.jake.ccxfromflash.model.dom.DOMBitmapItem;
 import com.jake.ccxfromflash.model.dom.DOMFrame;
 import com.jake.ccxfromflash.model.dom.DOMLayer;
+import com.jake.ccxfromflash.model.dom.DOMStaticText;
 import com.jake.ccxfromflash.util.Util;
 
 /**
@@ -29,15 +32,22 @@ public class ConvertLogic {
 	 * @return
 	 */
 	public List<DOMLayer> mergeDOMXml(List<DOMBitmapItem> domBitmapItemList , List<DOMLayer> domLayerList){
+		boolean isSetDom = false;
 		// domLayerの順番が正しい
 		for(DOMLayer domLayer : domLayerList){
 			String layerName = domLayer.getName();
+			isSetDom = false;
 			for(DOMBitmapItem domBitmapItem : domBitmapItemList){
 				String bitmapItemName = domBitmapItem.getName();
 				if(bitmapItemName != null && bitmapItemName.equals( layerName )){
 					domLayer.setDomBitmapItem(domBitmapItem);
+					isSetDom = true;
 					break;
 				}
+			}
+			
+			if(domLayer.getDomBitmapItem() == null){
+				domLayer.setDomBitmapItem(new DOMBitmapItem());
 			}
 		}
 		
@@ -62,10 +72,28 @@ public class ConvertLogic {
 				for(DOMFrame domFrame : domLayer.getDomFrameList()){
 					// 初期位置
 					if(ccx == null){
-						ccx = new CCXObject();
-						ccx.setName( dom.getName() );
+						switch(domFrame.getDomFrameType()){
+							case BITMAP:
+							case SYMBOL:
+								ccx = new CCXObject();
+								break;
+							case TEXT:
+								DOMStaticText domText = (DOMStaticText)domFrame;
+								CCXLabel label = new CCXLabel();
+								label.setWidth(domText.getWidth());
+								label.setHeight(domText.getHeight());
+								label.setCharacters(domText.getCharacters());
+								label.setAlignment(CCXLabelAlignment.of(domText.getAlignment()));
+								label.setFontName(domText.getFontFace());
+								label.setSize(domText.getSize());
+								
+								ccx = label;
+								break;
+						}
+						
+						ccx.setName( domLayer.getName() );
 						ccx.setIndex( domLayer.getIndex() );
-						ccx.setObjType( ObjectType.of( dom.getName() ) );
+						ccx.setObjType( ObjectType.of( domLayer.getName() ) );
 						ccx.setPosType( domLayer.getPosType() );
 						ccx.setOpacity( Util.round(domFrame.getAlphaMultiplier() * 255) );
 
@@ -169,6 +197,7 @@ public class ConvertLogic {
 		}
 
 		// blendModeがあればBlendModeを追加
+		// まだ未確認だから使わないで
 		if(!domFrame.getBlendMode().equals(preDomFrame.getBlendMode())) {
 			// クラシカルなキーフレームだけのアニメーションの場合、duration(経過時間)が無い。そのため、0秒で移動させ、残りの時間を待機する
 			CCXAction delayAction = createDelayTime(domFrame, preDomFrame);
@@ -236,49 +265,58 @@ public class ConvertLogic {
 		}
 		return null;
 	}
-
-	private void calcTransformationPoint(CCXObject ccx , DOMFrame domFrame){
-		if(ccx.getObjType() == ObjectType.TILE_SPRITE){
-			double radian = domFrame.getRotate() * Math.PI / 180;
-
-			double tx = domFrame.getTx() + Math.cos(radian) * domFrame.getTransformationPointX() * domFrame.getScaleX() - Math.sin(radian) * domFrame.getTransformationPointY() * domFrame.getScaleY();
-			double ty = domFrame.getTy() + Math.sin(radian) * domFrame.getTransformationPointX() * domFrame.getScaleX() + Math.cos(radian) * domFrame.getTransformationPointY() * domFrame.getScaleY();
-
-			domFrame.setTx(tx);
-			domFrame.setTy(ty);
-		}
-	}
-
+	
+	/**
+	 * positionを計算します。
+	 * @param ccx
+	 * @param dom
+	 * @param domFrame
+	 */
 	private void calcPos(CCXObject ccx , DOMBitmapItem dom , DOMFrame domFrame){
-		calcTransformationPoint(ccx , domFrame);
-		if(!isTilePos(ccx, dom, domFrame)){
-			double posX = domFrame.getTx() + (domFrame.getTransformationPointX() * ccx.getScaleX());
-			double posY = domFrame.getTy() + (domFrame.getTransformationPointY() * ccx.getScaleY());
+		switch(ccx.getObjType()){
+			case SPRITE:
+			case BTN:
+			case TEXT:
+				calcGameObjectPos(ccx, domFrame);
+				break;
+			case TILE_SPRITE:
+				calcTilePos(ccx, dom, domFrame);
+				break;
+			default:
+		}
+		
+	}
+	
+	private void calcGameObjectPos(CCXObject ccx , DOMFrame domFrame){
+		double posX = domFrame.getTx() + (domFrame.getTransformationPointX() * ccx.getScaleX());
+		double posY = domFrame.getTy() + (domFrame.getTransformationPointY() * ccx.getScaleY());
 
-			ccx.setPosX( Util.round(posX) );
-			if(ccx.getPosType() == PositionType.TOP){
-				ccx.setPosY( Util.round(domFrame.getTy()) );
-			}else{
-				double calcPosY = Config.TOTAL_HEIGHT - Util.round(posY);
-				ccx.setPosY( calcPosY );
-			}
+		ccx.setPosX( Util.round(posX) );
+		if(ccx.getPosType() == PositionType.TOP){
+			ccx.setPosY( Util.round(domFrame.getTy()) );
+		}else{
+			double calcPosY = Config.TOTAL_HEIGHT - Util.round(posY);
+			ccx.setPosY( calcPosY );
 		}
 	}
+	
+	private void calcTilePos(CCXObject ccx , DOMBitmapItem dom , DOMFrame domFrame){
+		double radian = domFrame.getRotate() * Math.PI / 180;
 
-	private boolean isTilePos(CCXObject ccx , DOMBitmapItem dom , DOMFrame domFrame){
-		if(ccx.getObjType() == ObjectType.TILE_SPRITE){
-			double posX = (ccx.getAnchorX() * dom.getWidth() * ccx.getScaleX());
-			double posY = (ccx.getAnchorY() * dom.getHeight() * ccx.getScaleY());
+		double tx = domFrame.getTx() + Math.cos(radian) * domFrame.getTransformationPointX() * domFrame.getScaleX() - Math.sin(radian) * domFrame.getTransformationPointY() * domFrame.getScaleY();
+		double ty = domFrame.getTy() + Math.sin(radian) * domFrame.getTransformationPointX() * domFrame.getScaleX() + Math.cos(radian) * domFrame.getTransformationPointY() * domFrame.getScaleY();
+		
+		double posX = (ccx.getAnchorX() * dom.getWidth() * ccx.getScaleX());
+		double posY = (ccx.getAnchorY() * dom.getHeight() * ccx.getScaleY());
+		
+		domFrame.setTx(tx);
+		domFrame.setTy(ty);
 
-			domFrame.setTx(domFrame.getTx() - posX);
-			domFrame.setTy(domFrame.getTy() + posY);
+		domFrame.setTx(domFrame.getTx() - posX);
+		domFrame.setTy(domFrame.getTy() + posY);
 
-			ccx.setPosX(domFrame.getTx());
-			ccx.setPosY(Config.TOTAL_HEIGHT - domFrame.getTy());
-
-			return true;
-		}
-		return false;
+		ccx.setPosX(domFrame.getTx());
+		ccx.setPosY(Config.TOTAL_HEIGHT - domFrame.getTy());
 	}
 
 	private double calcDuration(DOMFrame domFrame , DOMFrame preDomFrame){

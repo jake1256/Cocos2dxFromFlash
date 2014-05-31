@@ -1,0 +1,23 @@
+auto txt_dialog = Label::createWithSystemFont("ああああああああああああああああ", "_gothic", 36);
+txt_dialog->setHorizontalAlignment(TextHAlignment::LEFT);
+txt_dialog->setVerticalAlignment(TextVAlignment::CENTER);
+txt_dialog->setPosition(Point(63.5, 633.4));
+txt_dialog->setAnchorPoint(Point(0.0 , 1.0));
+txt_dialog->setWidth(236.95);
+this->addChild(txt_dialog);
+
+auto txt_test = Label::createWithSystemFont("右寄せ！！！", "_gothic", 50);
+txt_test->setHorizontalAlignment(TextHAlignment::RIGHT);
+txt_test->setVerticalAlignment(TextVAlignment::CENTER);
+txt_test->setPosition(Point(276.9, 945.2));
+txt_test->setAnchorPoint(Point(0.0 , 1.0));
+txt_test->setWidth(332.75);
+this->addChild(txt_test);
+
+auto txt_notice = Label::createWithSystemFont("このツールはFlashからcocos2d-xのソースを出力致します。変換をかけた後のソースはcocos2d-x v2系、v3系を選択することが出来ます。", "_gothic", 36);
+txt_notice->setHorizontalAlignment(TextHAlignment::CENTER);
+txt_notice->setVerticalAlignment(TextVAlignment::CENTER);
+txt_notice->setPosition(Point(63.5, 259.29999999999995));
+txt_notice->setAnchorPoint(Point(0.0 , 1.0));
+txt_notice->setWidth(530.9);
+this->addChild(txt_notice);

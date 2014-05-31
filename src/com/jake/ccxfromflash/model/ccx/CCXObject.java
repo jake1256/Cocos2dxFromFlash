@@ -69,7 +69,7 @@ public class CCXObject {
 	 * 透過率
 	 */
 	private double opacity = 0.0;
-
+	
 	/**
 	 * action list
 	 */

@@ -2,6 +2,7 @@ package com.jake.ccxfromflash.model.dom;
 
 import java.util.List;
 
+import com.jake.ccxfromflash.constants.ObjectType;
 import com.jake.ccxfromflash.constants.PositionType;
 
 /**
@@ -15,6 +16,7 @@ public class DOMLayer {
 	private String name;
 	private String layerType;
 	private String color;
+	private ObjectType objType;
 	private PositionType posType;
 	private int parentLayerIndex;
 	private List<DOMFrame> domFrameList;
@@ -117,6 +119,18 @@ public class DOMLayer {
 	 */
 	public void setIndex(int index) {
 		this.index = index;
+	}
+	/**
+	 * @return the objType
+	 */
+	public ObjectType getObjType() {
+		return objType;
+	}
+	/**
+	 * @param objType the objType to set
+	 */
+	public void setObjType(ObjectType objType) {
+		this.objType = objType;
 	}
 
 

@@ -1,12 +1,16 @@
 package com.jake.ccxfromflash.model.dom;
 
+import com.jake.ccxfromflash.constants.DomFrameType;
+
 /**
  * DOMLayer内のDOMFrame。1フレーム単位の値
  * @author kuuki_yomenaio
  *
  */
 public class DOMFrame {
-
+	
+	private DomFrameType domFrameType;
+	
 	private int index;
 	private int duration;
 	private double maxFrame;
@@ -364,6 +368,20 @@ public class DOMFrame {
 	 */
 	public boolean isWhiteFrame() {
 		return isWhiteFrame;
+	}
+
+	/**
+	 * @return the domFrameType
+	 */
+	public DomFrameType getDomFrameType() {
+		return domFrameType;
+	}
+
+	/**
+	 * @param domFrameType the domFrameType to set
+	 */
+	public void setDomFrameType(DomFrameType domFrameType) {
+		this.domFrameType = domFrameType;
 	}
 
 
