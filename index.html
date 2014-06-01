@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Cocos2dxfromflash : cocos2d-x " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cocos2dxfromflash</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jake1256/Cocos2dxFromFlash">View on GitHub</a>
+
+          <h1 id="project_title">Cocos2dxfromflash</h1>
+          <h2 id="project_tagline">cocos2d-x </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jake1256/Cocos2dxFromFlash/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jake1256/Cocos2dxFromFlash/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="cocos2dxfromflash" class="anchor" href="#cocos2dxfromflash"><span class="octicon octicon-link"></span></a>Cocos2dxFromFlash</h1>
+
+<h3>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>Flashからcocos2d-x(cpp)に変換するツールです。</p>
+
+<p>・画面全体のレイアウトをFlashで配置し、cocos2d-xにエクスポート</p>
+
+<p>・キャラクターのアニメーションをFlashで制作し、エクスポート</p>
+
+<p>などが可能です。</p>
+
+<p><img src="https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/flash1.png" alt="alt flash1"></p>
+
+<p>複数ある画面サイズに対応するため、
+top , center , bottom各種相対ポジション対応</p>
+
+<p>iphone4(640 x 960)</p>
+
+<p><img src="https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS1.png" alt="alt ui640x960"></p>
+
+<p>iphone5(640 x 1136)</p>
+
+<p><img src="https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/iOS2.png" alt="alt ui640x1136"></p>
+
+<p>(上下のメニューがそのまま張り付いていて、その他の部分は相対的に位置を補完します）</p>
+
+<p>テスト用のUI作成に<a href="http://www.jewel-s.jp/download/%20," title="星宝転生ジュエルセイバー">星宝転生ジュエルセイバー</a>の画像をお借りしています。</p>
+
+<p>各種Animation出力対応</p>
+
+<p><img src="https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/flash4.png" alt="alt flash4"></p>
+
+<p><img src="https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/anim1.png" alt="alt anim1"></p>
+
+<p>(すいません、伝わりませんね。もうちょっと考えます。こちらは自作です。)</p>
+
+<p>例えば画面レイアウト製作をした時にnewアイコンだけアニメーションさせたい
+といった使用方法も可能。</p>
+
+<p>もちろんキャラクターのアニメーションのような複雑な組み合わせ、
+腕の動きのような中心点がズレたアニメーションでも出力可能です。</p>
+
+<p>特に追加で必要なソースファイルやヘッダーファイルはありません。
+100% pure cocos2d-xのソース形式で出力致します。</p>
+
+<h3>
+<a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h3>
+
+<p>実行環境
+Windows , Mac OS で確認済
+実行には<a href="http://java.com/ja/download/">Java</a>のインストールが必要です。
+(MacOSでは標準で搭載されています。)</p>
+
+<p>対応Ver
+Flash CS5〜
+cocos2d-x v2.x
+cocos2d-x v3.x</p>
+
+<h3>
+<a name="use" class="anchor" href="#use"><span class="octicon octicon-link"></span></a>use</h3>
+
+<p>使い方は<a href="https://github.com/jake1256/Cocos2dxFromFlash/wiki#how-to-use">wikiのhow to use</a>をご確認下さい。</p>
+
+<h3>
+<a name="advicewiki%E3%81%AB%E3%81%BE%E3%81%A8%E3%82%81%E3%81%BE%E3%81%99" class="anchor" href="#advicewiki%E3%81%AB%E3%81%BE%E3%81%A8%E3%82%81%E3%81%BE%E3%81%99"><span class="octicon octicon-link"></span></a>advice(wikiにまとめます)</h3>
+
+<p>・flash側は画像ファイル名とレイヤー名を合わせてね。
+sample.png → sample</p>
+
+<p>・同じ画像を複数使う場合でも、画像ファイル名と同じレイヤー名にしてね。
+(変換時に自動的に_1 , _2と名前を付けます)</p>
+
+<p>・シンボル使う時はシンボル名も合わせてね。</p>
+
+<p>・１レイヤー１シンボル（１画像）でお願いします。複数配置すると全部同じ動きしちゃうよ！</p>
+
+<p>・top , bottom , centerでフォルダ分けすると相対座標で配置出来ます。</p>
+
+<p>・Flash側は日本語は使うな。英文字にしておくこと。（レイヤー1とかダメ。macに持ってった時にバグるかも）さらに-(ハイフン)を使うと、
+cpp側でエラーになるので、_(アンダースコア)にでもしてください。</p>
+
+<p>・cocos側はwindowSizeを別に持つのをオススメします。</p>
+
+<p>・回転、拡大、変形、移動、アルファは組み合わせて出来る。が、色のブレンドはまだ未実装。</p>
+
+<p>・キャラクターなどを作る時はFlashの中心点を0,0に。画面全体を組む時は逆に中心点を0,0にしないように。</p>
+
+<p>・動きがFlashと合わない事はあります。それは小数点以下の微量な動きがあった場合に
+小数点の丸め込みを入れているからです。その場合はソースコード側で調整してあげて下さい。</p>
+
+<p>・Flash CS5～対応なのは、xfl形式で出力出来るのがそこからだから。</p>
+
+<p>・Flash側で設定しているFrameRateで出力しているので、遅い、早いはそこで調整してください。</p>
+
+<p>・上手く変換出来ないよ？→xflフォルダ一式下さい。解析してみます。</p>
+
+<p>・JSなんだけど…。luaなんだけど…。→すいません…考えます。</p>
+
+<h3>
+<a name="licence" class="anchor" href="#licence"><span class="octicon octicon-link"></span></a>Licence</h3>
+
+<p><a href="http://ja.wikipedia.org/wiki/BSD%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9">BSD Licence</a></p>
+
+<h3>
+<a name="etc" class="anchor" href="#etc"><span class="octicon octicon-link"></span></a>etc</h3>
+
+<p>wiki書かねば。</p>
+
+<p>残項目メモ</p>
+
+<p>・画像のマスクを変換</p>
+
+<p>・色のブレンドを変換</p>
+
+<p>・多階層構造の場合</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cocos2dxfromflash maintained by <a href="https://github.com/jake1256">jake1256</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
