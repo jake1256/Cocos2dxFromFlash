@@ -45,48 +45,23 @@ iphone5(640 x 1136)
 特に追加で必要なソースファイルやヘッダーファイルはありません。
 100% pure cocos2d-xのソース形式で出力致します。
 
-cocos2d-xを使いたいんだけど、クリエイティブに新しいツールを覚えてもらうのはコストが…。
-
-オープンソースになっていないライブラリ組み込むのはバグが怖い…。
-
-過去Flashで作ってたものをお手軽に移植したい！
-
-少しでもリソース減らして軽くしたい！→texture packer使うとさらに軽く！オススメです。
-
-と言った場合にでも使って頂ければ幸いです。
-
-(まだまだ開発中)
-
 ###Support
+実行環境
+Windows , Mac OS で確認済
+実行には[Java](http://java.com/ja/download/)のインストールが必要です。
+(MacOSでは標準で搭載されています。)
 
 対応Ver
-Input
 Flash CS5〜
-
-Output
 cocos2d-x v2.x
 cocos2d-x v3.x
-のソースコードをテキストで出力
 
 ###use
-使い方
+使い方は[wikiのhow to use](https://github.com/jake1256/Cocos2dxFromFlash/wiki#how-to-use)をご確認下さい。
 
-1. flaファイルを開き、名前を付けて保存→形式を非圧縮Fla(.xfl)で保存
-
-2. cocos2dxFromFlash.jarをダブルクリックで実行し、.xflファイルをD&Dしてパスを設定
-
-3. 各種設定
-
-4. 変換ボタンを押下
-
-5. .xflの配置場所にtxtファイルが2つ出力されます。
-
-6. 後はcocos2d-x側でtxtファイルに書かれたソースコードをコピペ。resourceフォルダに画像を配置するのを忘れずに。texture packerマジおすすめ。
-
-7. Flashで作成したモノがそのままcocosに反映されます。
+###advice(wikiにまとめます)
 
 
-###advice
 ・flash側は画像ファイル名とレイヤー名を合わせてね。
 sample.png → sample
 
@@ -124,8 +99,10 @@ cpp側でエラーになるので、_(アンダースコア)にでもしてく�
 wiki書かねば。
 
 残項目メモ
-・テキストを変換
+
 ・画像のマスクを変換
+
 ・色のブレンドを変換
-・movieclipらしい使い方の対応→キラキラするアニメーションをmovieclipにして大量に配置するとか
+
+・多階層構造の場合
 
