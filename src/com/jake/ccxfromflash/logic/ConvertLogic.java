@@ -101,7 +101,7 @@ public class ConvertLogic {
 						calcAnchor(ccx, dom, domFrame);
 
 						// scale , rotateを計算しセット
-						calcScaleRotation(ccx, domFrame);
+						calcScaleRotation(ccx, dom , domFrame);
 						ccx.setScaleX(domFrame.getScaleX());
 						ccx.setScaleY(domFrame.getScaleY());
 						ccx.setRotate(domFrame.getRotate());
@@ -110,7 +110,7 @@ public class ConvertLogic {
 						calcPos(ccx, dom, domFrame); // 必ずfalseに落ちるが、初期値として入れる
 					}else{
 						// animationのために毎回計算が必要。
-						calcScaleRotation(ccx , domFrame);
+						calcScaleRotation(ccx , dom ,  domFrame);
 					}
 					createAction(ccx , domFrame, preDomFrame);
 					preDomFrame = domFrame;
@@ -366,7 +366,7 @@ public class ConvertLogic {
 	 * @param ccx
 	 * @param domFrame
 	 */
-	private void calcScaleRotation(CCXObject ccx , DOMFrame domFrame){
+	private void calcScaleRotation(CCXObject ccx , DOMBitmapItem dom , DOMFrame domFrame){
 		double scaleX = 1.0;
 		double scaleY = 1.0;
 		double rotate = 0.0;
@@ -375,6 +375,14 @@ public class ConvertLogic {
 		double b = domFrame.getB();
 		double c = domFrame.getC();
 		double d = domFrame.getD();
+		
+		if(dom != null && dom.getMatrix() != null){
+			a = a * dom.getMatrix().getA();
+			b = b * dom.getMatrix().getB();
+			c = c * dom.getMatrix().getC();
+			d = d * dom.getMatrix().getD();
+		}
+		
 
 		if(a == 1.0 && b == 0.0 && c == 0.0 && d == 1.0) {
 			// 初期値のまま

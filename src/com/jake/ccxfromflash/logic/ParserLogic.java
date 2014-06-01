@@ -21,6 +21,7 @@ import com.jake.ccxfromflash.constants.PositionType;
 import com.jake.ccxfromflash.model.dom.DOMBitmapItem;
 import com.jake.ccxfromflash.model.dom.DOMFrame;
 import com.jake.ccxfromflash.model.dom.DOMLayer;
+import com.jake.ccxfromflash.model.dom.DOMMatrix;
 import com.jake.ccxfromflash.model.dom.DOMStaticText;
 import com.jake.ccxfromflash.util.Util;
 
@@ -87,6 +88,7 @@ public class ParserLogic {
 
 		double offsetX = 0;
 		double offsetY = 0;
+		DOMMatrix domMatrix = new DOMMatrix();
 		// LIBRARY内にあるxmlを開く
 		NodeList bitmapInstanceList = includeDoc.getElementsByTagName("DOMBitmapInstance");
 		// 同じDOMBitmapInstance情報が２つ出力されている事があるので、とりあえず「>=」にする
@@ -95,6 +97,13 @@ public class ParserLogic {
 			Element matrix = (Element) bitmapElement.getElementsByTagName("Matrix").item(0);
 
 			if(matrix != null) {
+				domMatrix.setA( Util.getDouble(matrix, "a", 1.0) );
+				domMatrix.setB( Util.getDouble(matrix, "b", 0.0) );
+				domMatrix.setC( Util.getDouble(matrix, "c", 0.0) );
+				domMatrix.setD( Util.getDouble(matrix, "d", 1.0) );
+//				domFrame.setTx( Util.getDouble(matrix, "tx" , 0.0) );
+//				domFrame.setTy( Util.getDouble(matrix, "ty" , 0.0) );
+//				
 				offsetX = Util.getDouble(matrix, "tx", 0.0);
 				offsetY = Util.getDouble(matrix, "ty", 0.0);
 			}
@@ -102,6 +111,7 @@ public class ParserLogic {
 
 		domBitmapItem.setOffsetX(offsetX);
 		domBitmapItem.setOffsetY(offsetY);
+		domBitmapItem.setMatrix(domMatrix);
 	}
 
 	/**
@@ -263,16 +273,17 @@ public class ParserLogic {
 		//characters
 		// なんとFlashは改行入ると別タグに文字列が分割されるという…！
 		String characters = "";
+		String textContent = null;
 		NodeList characterList = domSymbolInstance.getElementsByTagName("characters");
 		for(int i = 0 ; i < characterList.getLength() ; i++){
-			characters += characterList.item(i).getTextContent();
+			textContent = characterList.item(i).getTextContent().replace("\r", "\\n");
+			characters += textContent;
 		}
 		
 		domStaticText.setWidth( Util.getDouble(domSymbolInstance, "width") );
 		domStaticText.setHeight(Util.getDouble(domSymbolInstance, "height"));
 		
-		// Flashはwordwrapされるが、cocos2d-xはされないので中央寄せでの自動改行位置に差異が出るかも。
-		// 手動で改行コードを入れる事をオススメします。
+		// Flashはwordwrapされるが、cocos2d-xはされないので中央寄せでの自動改行だと位置に差異が出るかも。
 		domStaticText.setCharacters( characters );
 		domStaticText.setAlignment( Util.getString(domTextAttrs, "alignment") );
 		domStaticText.setSize( Util.getInt(domTextAttrs, "size") );

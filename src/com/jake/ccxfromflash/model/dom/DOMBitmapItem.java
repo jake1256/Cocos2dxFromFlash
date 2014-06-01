@@ -16,6 +16,9 @@ public class DOMBitmapItem {
     private double height;
     private double offsetX;
     private double offsetY;
+    
+    private DOMMatrix matrix;
+    
     // nameが一致するDomLayerを紐付ける
     private List<DOMLayer> domLayerList;
     
@@ -116,5 +119,19 @@ public class DOMBitmapItem {
     	System.out.println("width[" + width + "] height[" + height + "]");
     	System.out.println("offsetX[" + offsetX + "] offsetY[" + offsetY + "]");
     }
+
+	/**
+	 * @return the matrix
+	 */
+	public DOMMatrix getMatrix() {
+		return matrix;
+	}
+
+	/**
+	 * @param matrix the matrix to set
+	 */
+	public void setMatrix(DOMMatrix matrix) {
+		this.matrix = matrix;
+	}
 
 }

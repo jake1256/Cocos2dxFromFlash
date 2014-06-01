@@ -1,0 +1,200 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="960" height="640" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.1 build 226" majorVersion="13" minorVersion="1" buildNumber="226" objectsSnapTo="false" viewAngle3D="84.5182101128788" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
+     <media>
+          <DOMBitmapItem name="bg_sf.png" itemID="538ade8d-00000057" sourceExternalFilepath="./LIBRARY/bg_sf.png" sourceLastImported="1401604304" sourcePlatform="macintosh" externalFileSize="1027533" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="bg_sf.png" bitmapDataHRef="M 2 1401609348.dat" frameRight="19200" frameBottom="14400"/>
+          <DOMBitmapItem name="black.png" itemID="538ab9c2-00000021" sourceExternalFilepath="./LIBRARY/black.png" sourceLastImported="1401609323" sourcePlatform="macintosh" externalFileSize="59117" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="black.png" bitmapDataHRef="M 2 1401600262.dat" frameRight="18000" frameBottom="4000"/>
+          <DOMBitmapItem name="down.png" itemID="538ade8d-00000058" sourceExternalFilepath="./LIBRARY/down.png" sourceLastImported="1263316152" sourcePlatform="macintosh" externalFileSize="3954" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="down.png" bitmapDataHRef="M 3 1401609348.dat" frameRight="5120" frameBottom="5120"/>
+          <DOMBitmapItem name="f053.png" itemID="538ade8d-00000059" sourceExternalFilepath="./LIBRARY/f053.png" sourceLastImported="1389698922" sourcePlatform="macintosh" externalFileSize="602806" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="f053.png" bitmapDataHRef="M 4 1401609348.dat" frameRight="12000" frameBottom="16000"/>
+          <DOMBitmapItem name="f113.png" itemID="538ade8d-0000005a" sourceExternalFilepath="./LIBRARY/f113.png" sourceLastImported="1389699166" sourcePlatform="macintosh" externalFileSize="367767" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="f113.png" bitmapDataHRef="M 5 1401609348.dat" frameRight="12000" frameBottom="16000"/>
+          <DOMBitmapItem name="home3.png" itemID="538ade8d-0000005b" sourceExternalFilepath="./LIBRARY/home3.png" sourceLastImported="1401577354" sourcePlatform="macintosh" externalFileSize="7422" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="home3.png" bitmapDataHRef="M 6 1401609349.dat" frameRight="10240" frameBottom="9080"/>
+          <DOMBitmapItem name="mails.png" itemID="538ade8d-0000005c" sourceExternalFilepath="./LIBRARY/mails.png" sourceLastImported="1401577354" sourcePlatform="macintosh" externalFileSize="4227" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="mails.png" bitmapDataHRef="M 7 1401609349.dat" frameRight="10240" frameBottom="10240"/>
+          <DOMBitmapItem name="number23.png" itemID="538ade8d-0000005d" sourceExternalFilepath="./LIBRARY/number23.png" sourceLastImported="1401577354" sourcePlatform="macintosh" externalFileSize="8361" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="number23.png" bitmapDataHRef="M 8 1401609349.dat" frameRight="10240" frameBottom="8200"/>
+          <DOMBitmapItem name="volume2.png" itemID="538ade8d-0000005e" sourceExternalFilepath="./LIBRARY/volume2.png" sourceLastImported="1401577354" sourcePlatform="macintosh" externalFileSize="3863" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="volume2.png" bitmapDataHRef="M 9 1401609349.dat" frameRight="10240" frameBottom="10240"/>
+     </media>
+     <symbols>
+          <Include href="black.xml" itemIcon="1" loadImmediate="false" itemID="538add6f-00000044" lastModified="1401609583"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="シーン 1">
+               <layers>
+                    <DOMLayer name="top" color="#FF4F4F" locked="true" autoNamed="false" layerType="folder"/>
+                    <DOMLayer name="number23" color="#FF4FFF" parentLayerIndex="0" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="number23.png">
+                                             <matrix>
+                                                  <Matrix a="0.07257080078125" d="0.07257080078125" tx="843.9" ty="36"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="volume2" color="#FF800A" parentLayerIndex="0" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="volume2.png">
+                                             <matrix>
+                                                  <Matrix a="0.1669921875" d="0.1669921875" tx="705.85" ty="-10.8"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="mails" color="#9933CC" parentLayerIndex="0" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="mails.png">
+                                             <matrix>
+                                                  <Matrix a="0.175186157226562" d="0.175186157226562" tx="791.35" ty="-10.8"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="home3" color="#4F80FF" parentLayerIndex="0" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="home3.png">
+                                             <matrix>
+                                                  <Matrix a="0.133209228515625" d="0.133209228515625" tx="891.8"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="bottom" color="#669900" locked="true" autoNamed="false" open="false" layerType="folder"/>
+                    <DOMLayer name="txt" color="#808080" parentLayerIndex="5" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMStaticText width="842.5" height="116.5" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="65.65" ty="419.15"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>そう言うと、彼女はコクリと頷き、何処かへ行ってしまった。</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" size="30" bitmapSize="600" face="_gothic" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                                  <DOMTextRun>
+                                                       <characters>&#xD;</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" size="30" bitmapSize="600" face="_gothic" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                                  <DOMTextRun>
+                                                       <characters>「では、我々もそろそろ移動しよう。」</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" size="30" bitmapSize="600" face="_gothic" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                                  <DOMTextRun>
+                                                       <characters>&#xD;</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" size="30" bitmapSize="600" face="_gothic" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                                  <DOMTextRun>
+                                                       <characters>僕は彼と共にこの先にあるリズネドと呼ばれる所に向かった。</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" size="30" bitmapSize="600" face="_gothic" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                                  <DOMTextRun>
+                                                       <characters></characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" size="30" bitmapSize="600" face="_gothic" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="down" color="#009999" parentLayerIndex="5" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="down.png">
+                                             <matrix>
+                                                  <Matrix a="0.276565551757812" d="0.276565551757812" tx="839.35" ty="537.65"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="black" color="#FF4FFF" parentLayerIndex="5" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="black" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix tx="476.15" ty="499.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.69921875"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="f113" color="#FF800A" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="f113.png">
+                                             <matrix>
+                                                  <Matrix tx="360"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="f053" color="#9933CC" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="f053.png">
+                                             <matrix>
+                                                  <Matrix tx="-49.55"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="bg_sf" color="#4F80FF" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMBitmapInstance libraryItemName="bg_sf.png">
+                                             <matrix>
+                                                  <Matrix ty="-80"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>
