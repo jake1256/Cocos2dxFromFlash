@@ -94,6 +94,9 @@ cpp側でエラーになるので、_(アンダースコア)にでもしてく�
 
 ・JSなんだけど…。luaなんだけど…。→すいません…考えます。
 
+###Licence
+[BSD Licence](http://ja.wikipedia.org/wiki/BSD%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
+
 ###etc
 
 wiki書かねば。
