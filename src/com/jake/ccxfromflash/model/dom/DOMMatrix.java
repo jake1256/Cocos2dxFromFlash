@@ -35,5 +35,11 @@ public class DOMMatrix {
 		this.d = d;
 	}
 	
+	public boolean isInit(){
+		if(a == 1 && b == 0 && c == 0 && d == 1){
+			return true;
+		}
+		return false;
+	}
 	
 }

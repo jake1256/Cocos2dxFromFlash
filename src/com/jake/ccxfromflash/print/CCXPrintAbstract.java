@@ -24,14 +24,18 @@ public abstract class CCXPrintAbstract {
 					Util.roundSF((ccx.getPosY() - Util.getCenterH()) , 4) +
 					")";
 		}else{
-			if(ccx.getPosType() == PositionType.TOP){
+			switch(ccx.getPosType()){
+			case TOP:
 				positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
-			}
-			else if(ccx.getPosType() == PositionType.CENTER){
+				break;
+			case CENTER:
 				positionYStr = "(" + verType.getWinHeight() + " - 960) / 2 + " + ccx.getPosY();
-			}
-			else{
+				break;
+			case BOTTOM:
 				positionYStr = "" + ccx.getPosY();
+				break;
+			default:
+				positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
 			}
 			return verType.getCcxPos() + "(" + ccx.getPosX() + ", " + positionYStr + ")";
 		}

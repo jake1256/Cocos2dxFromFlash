@@ -108,7 +108,10 @@ public class ParserLogic {
 				offsetY = Util.getDouble(matrix, "ty", 0.0);
 			}
 		}
-
+		
+		System.out.println("--- parse library " + domBitmapItem.getName() + " ---");
+		System.out.println("offset (" + offsetX + " , " + offsetY + ")");
+		System.out.println();
 		domBitmapItem.setOffsetX(offsetX);
 		domBitmapItem.setOffsetY(offsetY);
 		domBitmapItem.setMatrix(domMatrix);

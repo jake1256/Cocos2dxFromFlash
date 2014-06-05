@@ -67,9 +67,12 @@ public class ConvertLogic {
 			dom = domLayer.getDomBitmapItem();
 			
 			if(!domLayer.getLayerType().equals("folder")){
+				System.out.println("--- " + domLayer.getName() + " ---");
 				DOMFrame preDomFrame = domLayer.getDomFrameList().get(0);
 
 				for(DOMFrame domFrame : domLayer.getDomFrameList()){
+					
+					
 					// 初期位置
 					if(ccx == null){
 						switch(domFrame.getDomFrameType()){
@@ -105,12 +108,14 @@ public class ConvertLogic {
 						ccx.setScaleX(domFrame.getScaleX());
 						ccx.setScaleY(domFrame.getScaleY());
 						ccx.setRotate(domFrame.getRotate());
-
+						calcDomFramePos(domFrame);
 						// anchor , scale計算後、配置位置をセット
 						calcPos(ccx, dom, domFrame); // 必ずfalseに落ちるが、初期値として入れる
 					}else{
 						// animationのために毎回計算が必要。
 						calcScaleRotation(ccx , dom ,  domFrame);
+						//
+						calcDomFramePos(domFrame);
 					}
 					createAction(ccx , domFrame, preDomFrame);
 					preDomFrame = domFrame;
@@ -137,7 +142,13 @@ public class ConvertLogic {
 			if(delayAction != null){
 				actionList.addMoveByList(delayAction);
 			}
-
+			
+			System.out.println("--- pre dom ---");
+			preDomFrame.print();
+			
+			System.out.println("--- dom ---");
+			domFrame.print();
+			
 			CCXAction action = new CCXAction();
 			action.setActionType( ActionType.MOVEBY );
 			action.setDuration( calcDuration(domFrame , preDomFrame) );
@@ -277,7 +288,7 @@ public class ConvertLogic {
 			case SPRITE:
 			case BTN:
 			case TEXT:
-				calcGameObjectPos(ccx, domFrame);
+				calcGameObjectPos(ccx , dom, domFrame);
 				break;
 			case TILE_SPRITE:
 				calcTilePos(ccx, dom, domFrame);
@@ -287,10 +298,72 @@ public class ConvertLogic {
 		
 	}
 	
-	private void calcGameObjectPos(CCXObject ccx , DOMFrame domFrame){
-		double posX = domFrame.getTx() + (domFrame.getTransformationPointX() * ccx.getScaleX());
-		double posY = domFrame.getTy() + (domFrame.getTransformationPointY() * ccx.getScaleY());
-
+	/**
+	 * domFrameのポジションを微調整する。flashとccxの挙動の差異を埋める
+	 * @param domFrame
+	 */
+	private void calcDomFramePos(DOMFrame domFrame){
+		double x = domFrame.getTx();
+		double y = domFrame.getTy();
+		double tranX = domFrame.getTransformationPointX();
+		double tranY = domFrame.getTransformationPointY();
+		double scaleX = domFrame.getScaleX();
+		double scaleY = domFrame.getScaleY();
+		double rotate = domFrame.getRotate();
+		
+		if(tranX != 0 || tranY != 0){
+			double radian = rotate * Math.PI / 180;
+			
+			System.out.println("pos (" + x + " , " + y + ")");
+			
+			x += Math.cos(radian) * tranX * scaleX - Math.sin(radian) * tranY * scaleY;
+        	y += Math.sin(radian) * tranX * scaleX + Math.cos(radian) * tranY * scaleY;
+        	
+        	
+    		System.out.println("calc pos (" + x + " , " + y + ")");
+    		System.out.println("scale (" + scaleX + " , " + scaleY + ")");
+    		System.out.println("tran (" + tranX + " , " + tranY + ")");
+        	
+        	domFrame.setTx(x);
+        	domFrame.setTy(y);
+		}
+	}
+	
+	private void calcGameObjectPos(CCXObject ccx , DOMBitmapItem dom , DOMFrame domFrame){
+//		double posX = domFrame.getTx() + (domFrame.getTransformationPointX() * ccx.getScaleX());
+//		double posY = domFrame.getTy() + (domFrame.getTransformationPointY() * ccx.getScaleY());
+		
+//		double posX = (domFrame.getTx() + dom.getOffsetX()) + (dom.getWidth() * ccx.getAnchorX());
+//		double posY = (domFrame.getTy() + dom.getOffsetY()) - (dom.getHeight() * ccx.getAnchorY());
+		double x = domFrame.getTx();
+		double y = domFrame.getTy();
+		double w = dom.getWidth();
+		double h = dom.getHeight();
+		double offX = dom.getOffsetX();
+		double offY = dom.getOffsetY();
+		double tranX = domFrame.getTransformationPointX();
+		double tranY = domFrame.getTransformationPointY();
+		double ancX = ccx.getAnchorX();
+		double ancY = ccx.getAnchorY();
+		double scaleX = domFrame.getScaleX();
+		double scaleY = domFrame.getScaleY();
+		double rotate = domFrame.getRotate();
+		
+		double posX = x;
+		double posY = y;
+		
+		System.out.println("pos (" + x + " , " + y + ")");
+		System.out.println("offset (" + offX + " , " + offY + ")");
+		System.out.println("tran (" + tranX + " , " + tranY + ")");
+		System.out.println("size (" + w + " , " + h + ")");
+		System.out.println("anchor (" + ancX + " , " + ancY + ")");
+		System.out.println();
+//		if(tranX != 0 || tranY != 0){
+//			double radian = rotate * Math.PI / 180;
+//			posX += Math.cos(radian) * tranX * scaleX - Math.sin(radian) * tranY * scaleY;
+//        	posY += Math.sin(radian) * tranY * scaleX + Math.cos(radian) * tranY * scaleY;
+//		}
+		
 		ccx.setPosX( Util.round(posX) );
 		if(ccx.getPosType() == PositionType.TOP){
 			ccx.setPosY( Util.round(domFrame.getTy()) );
@@ -345,17 +418,20 @@ public class ConvertLogic {
 
 		double width = dom.getWidth();
 		double height = dom.getHeight();
+		
+		baseValueX = -(offsetX / width) + (pointX / width);
+		baseValueY = -(offsetY / height) - (pointY / height);
 
-		// xのanchor
-		baseValueX += pointX;
-		baseValueX -= offsetX;
-		baseValueX = (width - baseValueX) / width;
-		baseValueX = 1.0 - baseValueX;
-
-		// yのanchor
-		baseValueY += pointY;
-		baseValueY -= offsetY;
-		baseValueY = (height - baseValueY) / height;
+//		// xのanchor
+//		baseValueX += pointX;
+//		baseValueX -= offsetX;
+//		baseValueX = (width - baseValueX) / width;
+//		baseValueX = 1.0 - baseValueX;
+//
+//		// yのanchor
+//		baseValueY += pointY;
+//		baseValueY -= offsetY;
+//		baseValueY = (height - baseValueY) / height;
 
 		ccx.setAnchorX(baseValueX);
 		ccx.setAnchorY(baseValueY);
@@ -376,7 +452,7 @@ public class ConvertLogic {
 		double c = domFrame.getC();
 		double d = domFrame.getD();
 		
-		if(dom != null && dom.getMatrix() != null){
+		if(dom != null && dom.getMatrix() != null && !dom.getMatrix().isInit()){
 			a = a * dom.getMatrix().getA();
 			b = b * dom.getMatrix().getB();
 			c = c * dom.getMatrix().getC();
@@ -430,10 +506,6 @@ public class ConvertLogic {
 			rotate *= -1;
 		}
 
-		scaleX = Util.roundSF(scaleX, 4);
-		scaleY = Util.roundSF(scaleY, 4);
-		rotate = Util.roundSF(rotate, 4);
-
 		// actionのため、domFrameでも持つ
 		domFrame.setScaleX(scaleX);
 		domFrame.setScaleY(scaleY);
@@ -485,8 +557,10 @@ public class ConvertLogic {
 			if(scaleX != 0 || scaleY != 0){
 				CCXAction act = new CCXAction();
 				act.setActionType(ActionType.SCALETO);
-				act.setScaleX( -Util.roundSF(scaleX , 4) );
-				act.setScaleY( -Util.roundSF(scaleY , 4) );
+				//act.setScaleX( -Util.roundSF(scaleX , 4) );
+				//act.setScaleY( -Util.roundSF(scaleY , 4) );
+				act.setScaleX(1.0);
+				act.setScaleY(1.0);
 				actList.addScaleToList(act);
 			}
 
