@@ -30,11 +30,7 @@ iphone5(640 x 1136)
 
 各種Animation出力対応
 
-![alt flash4](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/flash4.png)
-
-![alt anim1](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/anim1.png)
-
-(すいません、伝わりませんね。もうちょっと考えます。こちらは自作です。)
+![alt flash4](https://raw.githubusercontent.com/jake1256/Cocos2dxFromFlash/master/img/sample/ios_movie.mov.gif)
 
 例えば画面レイアウト製作をした時にnewアイコンだけアニメーションさせたい
 といった使用方法も可能。
