@@ -1,0 +1,89 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="960" height="640" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.1 build 226" majorVersion="13" minorVersion="1" buildNumber="226" objectsSnapTo="false" viewAngle3D="84.5182101128788" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
+     <media>
+          <DOMBitmapItem name="effect.png" itemID="53940fdc-00000008" sourceExternalFilepath="./LIBRARY/effect.png" sourceLastImported="1402069639" sourcePlatform="macintosh" externalFileCRC32="2651101269" externalFileSize="5410" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="effect.png" bitmapDataHRef="M 1 1402212316.dat" frameRight="2000" frameBottom="2000"/>
+     </media>
+     <symbols>
+          <Include href="effect.xml" loadImmediate="false" itemID="53940fe8-0000000e" lastModified="1402212328"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="シーン 1" currentFrame="49">
+               <layers>
+                    <DOMLayer name="effect" color="#4F80FF" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="9" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="9" duration="10" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="effect">
+                                             <matrix>
+                                                  <Matrix tx="804.85" ty="512.95"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="19" duration="10" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="effect" centerPoint3DX="163.95" centerPoint3DY="155.9">
+                                             <matrix>
+                                                  <Matrix a="1.90699768066406" d="1.90699768066406" tx="163.65" ty="155.9"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.5390625"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="29" duration="10" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="effect" centerPoint3DX="163.95" centerPoint3DY="155.9">
+                                             <matrix>
+                                                  <Matrix a="1.90699768066406" d="1.90699768066406" tx="163.65" ty="155.9"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="39" duration="10" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="effect" centerPoint3DX="465.1" centerPoint3DY="310.2">
+                                             <matrix>
+                                                  <Matrix a="0.606414794921875" d="0.606414794921875" tx="464.6" ty="309.9"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="49" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="effect" selected="true" centerPoint3DX="156.75" centerPoint3DY="448.65">
+                                             <matrix>
+                                                  <Matrix a="2.57012939453125" d="2.57012939453125" tx="156.35" ty="448.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>

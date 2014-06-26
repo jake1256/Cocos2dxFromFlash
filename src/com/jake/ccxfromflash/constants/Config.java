@@ -14,7 +14,7 @@ public class Config {
 	/**
 	 * 最大Frame数
 	 */
-	public static double MAX_FRAME = 0;
+	public static int MAX_FRAME = 0;
 
 	/**
 	 * Flashのcanvasサイズ高さ

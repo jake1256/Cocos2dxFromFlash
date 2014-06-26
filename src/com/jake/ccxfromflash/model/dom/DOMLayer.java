@@ -1,9 +1,17 @@
 package com.jake.ccxfromflash.model.dom;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import com.jake.ccxfromflash.constants.ObjectType;
 import com.jake.ccxfromflash.constants.PositionType;
+import com.jake.ccxfromflash.model.dom.item.DOMBitmapItem;
+import com.jake.ccxfromflash.model.dom.item.DOMItem;
+import com.jake.ccxfromflash.model.dom.item.DOMSymbolItem;
+import com.jake.ccxfromflash.util.Util;
 
 /**
  * DOMDocument.xmlのDOMLayer
@@ -19,11 +27,61 @@ public class DOMLayer {
 	private ObjectType objType;
 	private PositionType posType;
 	private int parentLayerIndex;
+
 	private List<DOMFrame> domFrameList;
-	
+
 	/** domBitmapItemとマージする */
-	private DOMBitmapItem domBitmapItem;
-	
+	private DOMItem domItem;
+
+	public void parse(Element element){
+		this.name				= Util.getString(element , "name");
+		this.color 				= Util.getString(element , "color");
+		this.layerType 			= Util.getString(element , "layerType");
+		this.posType 			= PositionType.of(this.name);
+		this.objType 			= ObjectType.of(this.name);
+		this.parentLayerIndex 	= Util.getInt(element, "parentLayerIndex" , -1);
+		this.domFrameList		= new ArrayList<>();
+
+		if(!this.layerType.equals("folder")){
+			NodeList domFrameElementList = element.getElementsByTagName("DOMFrame");
+
+			for(int j = 0; j < domFrameElementList.getLength() ; j++) {
+				Element domFrameElement 	= (Element)domFrameElementList.item(j);
+
+				// DOMFrameをパース
+				DOMFrame domFrame = new DOMFrame();
+				domFrame.parse(domFrameElement);
+				domFrameList.add(domFrame);
+			}
+		}
+
+	}
+
+	public void print(int i){
+		Util.print("" , i);
+		Util.print("--- DOMLayer name[" + name + "] ---" , i);
+		Util.print("color[" + color + "]" , i);
+
+		Util.print("layerType[" + layerType + "]" , i);
+		Util.print("posType[" + posType + "]" , i);
+		Util.print("objType[" + objType + "]" , i);
+		Util.print("parentLayerIndex[" + parentLayerIndex + "]" , i);
+
+		if(domItem instanceof DOMBitmapItem){
+			((DOMBitmapItem)domItem).print(i + 1);
+		}
+		else if(domItem instanceof DOMSymbolItem){
+			((DOMSymbolItem)domItem).print(i + 1);
+		}
+
+		int index = 0;
+		for(DOMFrame domFrame : domFrameList){
+			Util.print("" , i);
+			Util.print("domFrameList[" + index++ + "]" , i + i);
+			domFrame.print(i + 1);
+		}
+
+	}
 	/**
 	 * @return name
 	 */
@@ -97,18 +155,6 @@ public class DOMLayer {
 		return posType;
 	}
 	/**
-	 * @return the domBitmapItem
-	 */
-	public DOMBitmapItem getDomBitmapItem() {
-		return domBitmapItem;
-	}
-	/**
-	 * @param domBitmapItem the domBitmapItem to set
-	 */
-	public void setDomBitmapItem(DOMBitmapItem domBitmapItem) {
-		this.domBitmapItem = domBitmapItem;
-	}
-	/**
 	 * @return the index
 	 */
 	public int getIndex() {
@@ -131,6 +177,14 @@ public class DOMLayer {
 	 */
 	public void setObjType(ObjectType objType) {
 		this.objType = objType;
+	}
+
+	public DOMItem getDomItem() {
+		return domItem;
+	}
+
+	public void setDomItem(DOMItem domItem) {
+		this.domItem = domItem;
 	}
 
 

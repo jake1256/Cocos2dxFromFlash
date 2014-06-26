@@ -1,4 +1,4 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="640" height="960" frameRate="12" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.1 build 226" majorVersion="13" minorVersion="1" buildNumber="226" objectsSnapTo="false" viewAngle3D="62.4108334222142" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="640" height="960" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.1 build 226" majorVersion="13" minorVersion="1" buildNumber="226" objectsSnapTo="false" viewAngle3D="62.4108334222142" nextSceneIdentifier="2" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
      <media>
           <DOMBitmapItem name="body.png" itemID="5381c53b-00000030" sourceExternalFilepath="../anim_sample/LIBRARY/body.png" sourceLastImported="1401013137" sourcePlatform="macintosh" externalFileCRC32="1992363645" externalFileSize="7581" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="body.png" bitmapDataHRef="M 7 1401013563.dat" frameRight="1820" frameBottom="2720"/>
           <DOMBitmapItem name="face.png" itemID="5381c511-00000012" sourceExternalFilepath="../anim_sample/LIBRARY/face.png" sourceLastImported="1401012884" sourcePlatform="macintosh" externalFileCRC32="3420114846" externalFileSize="12569" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="face.png" bitmapDataHRef="M 1 1401013521.dat" frameRight="3380" frameBottom="2400"/>
@@ -18,9 +18,9 @@
           <Include href="sword.xml" loadImmediate="false" itemID="5381d9a6-0000010c" lastModified="1401018790"/>
      </symbols>
      <timelines>
-          <DOMTimeline name="シーン 1">
+          <DOMTimeline name="シーン 1" currentFrame="13">
                <layers>
-                    <DOMLayer name="face" color="#4F80FF" autoNamed="false">
+                    <DOMLayer name="face" color="#4F80FF" current="true" isSelected="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -76,11 +76,11 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="right_leg" color="#808080" current="true" isSelected="true" autoNamed="false">
+                    <DOMLayer name="right_leg" color="#808080" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="right_leg" selected="true">
+                                        <DOMSymbolInstance libraryItemName="right_leg">
                                              <matrix>
                                                   <Matrix tx="304" ty="549"/>
                                              </matrix>

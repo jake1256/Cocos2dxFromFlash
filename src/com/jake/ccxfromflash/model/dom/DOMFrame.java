@@ -1,6 +1,10 @@
 package com.jake.ccxfromflash.model.dom;
 
-import com.jake.ccxfromflash.constants.DomFrameType;
+import org.w3c.dom.Element;
+
+import com.jake.ccxfromflash.constants.DomObjectType;
+import com.jake.ccxfromflash.model.dom.obj.DOMObject;
+import com.jake.ccxfromflash.util.Util;
 
 /**
  * DOMLayer内のDOMFrame。1フレーム単位の値
@@ -8,59 +12,47 @@ import com.jake.ccxfromflash.constants.DomFrameType;
  *
  */
 public class DOMFrame {
-	
-	private DomFrameType domFrameType;
-	
+
 	private int index;
 	private int duration;
-	private double maxFrame;
-	private String blendMode;
 	private String tweenType;
-	private String motionTweenRotate;
-	private int motionTweenRotateTimes;
-	private boolean isWhiteFrame; // 空白のフレーム
+	private String motionTweenSnap;
 
-	// position
-	private double tx;
-	private double ty;
+	private DOMObject domObject;
 
-	private double centerPoint3DX;
-	private double centerPoint3DY;
+	public void parse(Element element){
+		this.index				= Util.getInt(element , "index");
+		this.duration 			= Util.getInt(element , "duration");
+		this.tweenType 			= Util.getString(element , "tweenType");
+		this.motionTweenSnap 	= Util.getString(element , "motionTweenSnap");
 
-	// matrix
-	private double a;
-	private double b;
-	private double c;
-	private double d;
-
-	private double transformationPointX;
-	private double transformationPointY;
-
-	private double alphaMultiplier;
-
-	public void print(){
-		System.out.println(" --- index[" + index + "] duration[" + duration + "] --- ");
-		System.out.println("maxFrame[" + maxFrame + "] blendMode[" + blendMode + "] tweenType[" + tweenType + "] motionTweenRotate[" + motionTweenRotate + "] motionTweenRotateTimes[" + motionTweenRotateTimes + "] isWhiteFrame[" + isWhiteFrame + "]");
-		System.out.println("tx[" + tx + "] ty[" + ty + "] centerPoint3DX[" + centerPoint3DX + "] centerPoint3DY[" + centerPoint3DY + "]");
-		System.out.println("a[" + a + "] b[" + b + "] c[" + c + "] d[" + d + "] transformationPointX[" + transformationPointX + "] transformationPointY[" + transformationPointY + "] alpha[" + alphaMultiplier + "]");
-
+		DomObjectType objType = DomObjectType.of(element);
+		domObject = objType.getInstance();
+		domObject.parse(element);
 	}
 
+	public void print(int i){
+		Util.print("☆☆☆ DOMFrame [" + index + " - " + duration + "] start ☆☆☆" , i);
+		Util.print("index[" + index + "]" , i);
+		Util.print("duration[" + duration + "]" , i);
+		Util.print("tweenType[" + tweenType + "]" , i);
+		Util.print("motionTweenSnap[" + motionTweenSnap + "]" , i);
 
-	/**
-	 * 拡大率x
-	 */
-	private double scaleX = 0.0;
+		domObject.print(i + 1);
+		Util.print("☆☆☆ DOMFrame [" + index + "- " + duration + "] end ☆☆☆" , i);
+	}
 
-	/**
-	 * 拡大率y
-	 */
-	private double scaleY = 0.0;
+	public boolean equals(DOMFrame domFrame){
+		if( this.index == domFrame.getIndex() &&
+			this.duration == domFrame.getDuration() &&
+			this.tweenType.equals(domFrame.getTweenType()) &&
+			this.motionTweenSnap.equals(domFrame.getMotionTweenSnap())
+			){
+			return true;
+		}
 
-	/**
-	 * 回転
-	 */
-	private double rotate = 0.0;
+		return false;
+	}
 
 	/**
 	 * @return index
@@ -91,160 +83,6 @@ public class DOMFrame {
 	}
 
 	/**
-	 * @return tx
-	 */
-	public double getTx() {
-		return tx;
-	}
-
-	/**
-	 * @param tx セットする tx
-	 */
-	public void setTx(double tx) {
-		this.tx = tx;
-	}
-
-	/**
-	 * @return ty
-	 */
-	public double getTy() {
-		return ty;
-	}
-
-	/**
-	 * @param ty セットする ty
-	 */
-	public void setTy(double ty) {
-		this.ty = ty;
-	}
-
-	/**
-	 * @return centerPoint3DX
-	 */
-	public double getCenterPoint3DX() {
-		return centerPoint3DX;
-	}
-
-	/**
-	 * @param centerPoint3DX セットする centerPoint3DX
-	 */
-	public void setCenterPoint3DX(double centerPoint3DX) {
-		this.centerPoint3DX = centerPoint3DX;
-	}
-
-	/**
-	 * @return centerPoint3DY
-	 */
-	public double getCenterPoint3DY() {
-		return centerPoint3DY;
-	}
-
-	/**
-	 * @param centerPoint3DY セットする centerPoint3DY
-	 */
-	public void setCenterPoint3DY(double centerPoint3DY) {
-		this.centerPoint3DY = centerPoint3DY;
-	}
-
-	/**
-	 * @return a
-	 */
-	public double getA() {
-		return a;
-	}
-
-	/**
-	 * @param a セットする a
-	 */
-	public void setA(double a) {
-		this.a = a;
-	}
-
-	/**
-	 * @return b
-	 */
-	public double getB() {
-		return b;
-	}
-
-	/**
-	 * @param b セットする b
-	 */
-	public void setB(double b) {
-		this.b = b;
-	}
-
-	/**
-	 * @return c
-	 */
-	public double getC() {
-		return c;
-	}
-
-	/**
-	 * @param c セットする c
-	 */
-	public void setC(double c) {
-		this.c = c;
-	}
-
-	/**
-	 * @return d
-	 */
-	public double getD() {
-		return d;
-	}
-
-	/**
-	 * @param d セットする d
-	 */
-	public void setD(double d) {
-		this.d = d;
-	}
-
-	/**
-	 * @return transformationPointX
-	 */
-	public double getTransformationPointX() {
-		return transformationPointX;
-	}
-
-	/**
-	 * @param transformationPointX セットする transformationPointX
-	 */
-	public void setTransformationPointX(double transformationPointX) {
-		this.transformationPointX = transformationPointX;
-	}
-
-	/**
-	 * @return transformationPointY
-	 */
-	public double getTransformationPointY() {
-		return transformationPointY;
-	}
-
-	/**
-	 * @param transformationPointY セットする transformationPointY
-	 */
-	public void setTransformationPointY(double transformationPointY) {
-		this.transformationPointY = transformationPointY;
-	}
-
-	/**
-	 * @return alphaMultiplier
-	 */
-	public double getAlphaMultiplier() {
-		return alphaMultiplier;
-	}
-
-	/**
-	 * @param alphaMultiplier セットする alphaMultiplier
-	 */
-	public void setAlphaMultiplier(double alphaMultiplier) {
-		this.alphaMultiplier = alphaMultiplier;
-	}
-
-	/**
 	 * @return tweenType
 	 */
 	public String getTweenType() {
@@ -259,131 +97,32 @@ public class DOMFrame {
 	}
 
 	/**
-	 * @return motionTweenRotate
+	 * @return motionTweenSnap
 	 */
-	public String getMotionTweenRotate() {
-		return motionTweenRotate;
+	public String getMotionTweenSnap() {
+		return motionTweenSnap;
 	}
 
 	/**
-	 * @param motionTweenRotate セットする motionTweenRotate
+	 * @param motionTweenSnap セットする motionTweenSnap
 	 */
-	public void setMotionTweenRotate(String motionTweenRotate) {
-		this.motionTweenRotate = motionTweenRotate;
+	public void setMotionTweenSnap(String motionTweenSnap) {
+		this.motionTweenSnap = motionTweenSnap;
 	}
 
 	/**
-	 * @param motionTweenRotateTimes セットする motionTweenRotateTimes
+	 * @return domObject
 	 */
-	public void setMotionTweenRotateTimes(int motionTweenRotateTimes) {
-		this.motionTweenRotateTimes = motionTweenRotateTimes;
+	public DOMObject getDomObject() {
+		return domObject;
 	}
 
 	/**
-	 * @return motionTweenRotateTimes
+	 * @param domObject セットする domObject
 	 */
-	public int getMotionTweenRotateTimes() {
-		return motionTweenRotateTimes;
+	public void setDomObject(DOMObject domObject) {
+		this.domObject = domObject;
 	}
-
-	/**
-	 * @return scaleX
-	 */
-	public double getScaleX() {
-		return scaleX;
-	}
-
-	/**
-	 * @param scaleX セットする scaleX
-	 */
-	public void setScaleX(double scaleX) {
-		this.scaleX = scaleX;
-	}
-
-	/**
-	 * @return scaleY
-	 */
-	public double getScaleY() {
-		return scaleY;
-	}
-
-	/**
-	 * @param scaleY セットする scaleY
-	 */
-	public void setScaleY(double scaleY) {
-		this.scaleY = scaleY;
-	}
-
-	/**
-	 * @return rotate
-	 */
-	public double getRotate() {
-		return rotate;
-	}
-
-	/**
-	 * @param rotate セットする rotate
-	 */
-	public void setRotate(double rotate) {
-		this.rotate = rotate;
-	}
-
-	/**
-	 * @param blendMode セットする blendMode
-	 */
-	public void setBlendMode(String blendMode) {
-		this.blendMode = blendMode;
-	}
-
-	/**
-	 * @return blendMode
-	 */
-	public String getBlendMode() {
-		return blendMode;
-	}
-
-	/**
-	 * @param maxFrame セットする maxFrame
-	 */
-	public void setMaxFrame(double maxFrame) {
-		this.maxFrame = maxFrame;
-	}
-
-	/**
-	 * @return maxFrame
-	 */
-	public double getMaxFrame() {
-		return maxFrame;
-	}
-
-	/**
-	 * @param isWhiteFrame セットする isWhiteFrame
-	 */
-	public void setWhiteFrame(boolean isWhiteFrame) {
-		this.isWhiteFrame = isWhiteFrame;
-	}
-
-	/**
-	 * @return isWhiteFrame
-	 */
-	public boolean isWhiteFrame() {
-		return isWhiteFrame;
-	}
-
-	/**
-	 * @return the domFrameType
-	 */
-	public DomFrameType getDomFrameType() {
-		return domFrameType;
-	}
-
-	/**
-	 * @param domFrameType the domFrameType to set
-	 */
-	public void setDomFrameType(DomFrameType domFrameType) {
-		this.domFrameType = domFrameType;
-	}
-
 
 
 }

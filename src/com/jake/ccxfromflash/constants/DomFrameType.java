@@ -2,7 +2,7 @@ package com.jake.ccxfromflash.constants;
 
 /**
  * DomFrameの種別
- * @author jake
+ * @author kuuki_yomenaio
  *
  */
 public enum DomFrameType {
@@ -11,7 +11,8 @@ public enum DomFrameType {
 	/** 画像 */
 	BITMAP(1),
 	/** テキスト */
-	TEXT(2)
+	TEXT(2),
+	WHITE(3),
 	;
 	
 	private int value;

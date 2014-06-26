@@ -13,11 +13,13 @@ import org.w3c.dom.Element;
 import com.jake.ccxfromflash.constants.CCXVersionType;
 import com.jake.ccxfromflash.constants.Config;
 import com.jake.ccxfromflash.logic.ConvertLogic;
+import com.jake.ccxfromflash.logic.MargeLogic;
 import com.jake.ccxfromflash.logic.ParserLogic;
 import com.jake.ccxfromflash.logic.WriterLogic;
 import com.jake.ccxfromflash.model.ccx.CCXObject;
-import com.jake.ccxfromflash.model.dom.DOMBitmapItem;
 import com.jake.ccxfromflash.model.dom.DOMLayer;
+import com.jake.ccxfromflash.model.dom.item.DOMBitmapItem;
+import com.jake.ccxfromflash.model.dom.item.DOMSymbolItem;
 import com.jake.ccxfromflash.util.Util;
 
 /**
@@ -30,6 +32,7 @@ public class ConvertService {
 	private DocumentBuilder db = null;
 
 	private ParserLogic parserLogic;
+	private MargeLogic margeLogic;
 	private ConvertLogic convertLogic;
 	private WriterLogic writerLogic;
 
@@ -38,9 +41,10 @@ public class ConvertService {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		db = dbf.newDocumentBuilder();
 		parserLogic = new ParserLogic();
+		margeLogic = new MargeLogic();
 		convertLogic = new ConvertLogic();
 		writerLogic = new WriterLogic();
-		
+
 		CCXVersionType verType;
 		if(Config.isVer3_0){
 			verType = CCXVersionType.CCX_3X;
@@ -73,17 +77,22 @@ public class ConvertService {
 
 		// DOMElement.xmlをparseしてjavaオブジェクトに変換
 		List<DOMBitmapItem> domBitmapItemList 	= parserLogic.parseDOMBitmapItem(doc);
-		List<DOMLayer> domLayerList 			= parserLogic.parseDomLayer(doc);
+		List<DOMSymbolItem> domSymbolList		= parserLogic.parseIncludeList(doc);
+		List<DOMLayer> domLayerList 			= parserLogic.parseDOMLayer(doc);
 
-		// mergeして、CCX型に変換処理
-		domLayerList 			= convertLogic.mergeDOMXml(domBitmapItemList, domLayerList);
+		// 全ての要素をDOMLayerに紐付ける
+		margeLogic.marge(domLayerList, domBitmapItemList, domSymbolList);
+		
+
+//		// mergeして、CCX型に変換処理
+//		domLayerList 			= convertLogic.mergeDOMXml(domBitmapItemList, domLayerList);
 		List<CCXObject> ccxList = convertLogic.convertCcx(domLayerList);
-
-		if(Config.isRepeatForever){
-			convertLogic.finishInitPosition(ccxList);
-		}
-
-		// 書き出す
+//
+//		if(Config.isRepeatForever){
+//			convertLogic.finishInitPosition(ccxList);
+//		}
+//
+//		// 書き出す
 		writerLogic.write(verType , ccxList);
 	}
 

@@ -34,7 +34,7 @@ public class MainView extends JFrame{
 	private static final long serialVersionUID = 6234085892847279348L;
 
 	private JTextField dragDropTextField;
-	private JComboBox<String> animationModeComboBox;
+	private JComboBox animationModeComboBox;
 	private JCheckBox centerPointCheckBox;
 	private JRadioButton radioV3;
 	private JRadioButton radioV2;
@@ -100,7 +100,7 @@ public class MainView extends JFrame{
 		JPanel animationModePanel = new JPanel();
 		animationModePanel.setLayout(new BoxLayout(animationModePanel, BoxLayout.X_AXIS));
 		animationModePanel.add(new JLabel("アニメーションのタイプ"));
-		animationModeComboBox = new JComboBox<String>(new String[] {
+		animationModeComboBox = new JComboBox(new String[] {
 				"once only",
 				"repeat forever"
 		});

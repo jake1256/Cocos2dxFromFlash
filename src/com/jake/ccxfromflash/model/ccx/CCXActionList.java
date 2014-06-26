@@ -1,6 +1,5 @@
 package com.jake.ccxfromflash.model.ccx;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,116 +19,108 @@ public class CCXActionList {
 	private List<CCXAction> removeList;
 	private List<CCXAction> brendModeList;
 
-	public CCXActionList(){
-		hasAction = false;
 
-		delayTimeList = new ArrayList<>();
-		moveByList = new ArrayList<>();
-		scaleToList = new ArrayList<>();
-		rotateToList = new ArrayList<>();
-		fadeToList = new ArrayList<>();
-		removeList = new ArrayList<>();
-		brendModeList = new ArrayList<>();
-	}
 
-	public void addDelayTimeList(CCXAction act){
-		setHasAction();
-		delayTimeList.add(act);
-	}
-
-	public void addMoveByList(CCXAction act){
-		setHasAction();
-		moveByList.add(act);
-	}
-
-	public void addScaleToList(CCXAction act){
-		setHasAction();
-		scaleToList.add(act);
-	}
-
-	public void addRotateToList(CCXAction act){
-		setHasAction();
-		rotateToList.add(act);
-	}
-
-	public void addFadeToList(CCXAction act){
-		setHasAction();
-		fadeToList.add(act);
-	}
-
-	public void addRemoveToList(CCXAction act){
-		setHasAction();
-		removeList.add(act);
-	}
-
-	public void addBrendModeList(CCXAction act){
-		setHasAction();
-		brendModeList.add(act);
-	}
-
-	/**
-	 * @return delayTimeList
-	 */
-	public List<CCXAction> getDelayTimeList() {
-		return delayTimeList;
-	}
-
-	/**
-	 * @return moveByList
-	 */
-	public List<CCXAction> getMoveByList() {
-		return moveByList;
-	}
-
-	/**
-	 * @return scaleToList
-	 */
-	public List<CCXAction> getScaleToList() {
-		return scaleToList;
-	}
-
-	/**
-	 * @return rotateToList
-	 */
-	public List<CCXAction> getRotateToList() {
-		return rotateToList;
-	}
-
-	/**
-	 * @return fadeToList
-	 */
-	public List<CCXAction> getFadeToList() {
-		return fadeToList;
-	}
-
-	/**
-	 * @return removeList
-	 */
-	public List<CCXAction> getRemoveList() {
-		return removeList;
-	}
-
-	/**
-	 * @return brendModeList
-	 */
-	public List<CCXAction> getBrendModeList() {
-		return brendModeList;
-	}
-
-	/**
-	 * @param hasAction セットする hasAction
-	 */
-	public void setHasAction() {
-		if(this.hasAction == false){
-			this.hasAction = true;
-		}
-	}
 
 	/**
 	 * @return hasAction
 	 */
 	public boolean isHasAction() {
 		return hasAction;
+	}
+	/**
+	 * @param hasAction セットする hasAction
+	 */
+	public void setHasAction(boolean hasAction) {
+		this.hasAction = hasAction;
+	}
+	/**
+	 * @return delayTimeList
+	 */
+	public List<CCXAction> getDelayTimeList() {
+		return delayTimeList;
+	}
+	/**
+	 * @param delayTimeList セットする delayTimeList
+	 */
+	public void setDelayTimeList(List<CCXAction> delayTimeList) {
+		this.delayTimeList = delayTimeList;
+	}
+	/**
+	 * @return moveByList
+	 */
+	public List<CCXAction> getMoveByList() {
+		return moveByList;
+	}
+	/**
+	 * @param moveByList セットする moveByList
+	 */
+	public void setMoveByList(List<CCXAction> moveByList) {
+		hasAction = true;
+		this.moveByList = moveByList;
+	}
+	/**
+	 * @return scaleToList
+	 */
+	public List<CCXAction> getScaleToList() {
+		return scaleToList;
+	}
+	/**
+	 * @param scaleToList セットする scaleToList
+	 */
+	public void setScaleToList(List<CCXAction> scaleToList) {
+		hasAction = true;
+		this.scaleToList = scaleToList;
+	}
+	/**
+	 * @return rotateToList
+	 */
+	public List<CCXAction> getRotateToList() {
+		return rotateToList;
+	}
+	/**
+	 * @param rotateToList セットする rotateToList
+	 */
+	public void setRotateToList(List<CCXAction> rotateToList) {
+		hasAction = true;
+		this.rotateToList = rotateToList;
+	}
+	/**
+	 * @return fadeToList
+	 */
+	public List<CCXAction> getFadeToList() {
+		return fadeToList;
+	}
+	/**
+	 * @param fadeToList セットする fadeToList
+	 */
+	public void setFadeToList(List<CCXAction> fadeToList) {
+		hasAction = true;
+		this.fadeToList = fadeToList;
+	}
+	/**
+	 * @return removeList
+	 */
+	public List<CCXAction> getRemoveList() {
+		return removeList;
+	}
+	/**
+	 * @param removeList セットする removeList
+	 */
+	public void setRemoveList(List<CCXAction> removeList) {
+		this.removeList = removeList;
+	}
+	/**
+	 * @return brendModeList
+	 */
+	public List<CCXAction> getBrendModeList() {
+		return brendModeList;
+	}
+	/**
+	 * @param brendModeList セットする brendModeList
+	 */
+	public void setBrendModeList(List<CCXAction> brendModeList) {
+		this.brendModeList = brendModeList;
 	}
 
 

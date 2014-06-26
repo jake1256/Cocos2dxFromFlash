@@ -31,7 +31,7 @@ public enum ObjectType {
 	 * ボタン
 	 */
 	BTN(CCXButtonPrint.class),
-
+	
 	/**
 	 * どれでもない
 	 */
@@ -56,6 +56,10 @@ public enum ObjectType {
 			if(name.startsWith("tile")){
 				return TILE_SPRITE;
 			}
+			else
+			if(name.startsWith("guide")){
+				return NONE;
+			}
 			else{
 				return SPRITE;
 			}
@@ -67,10 +71,12 @@ public enum ObjectType {
 	 * @return the printClass
 	 */
 	public CCXPrintAbstract getPrintClass() {
-		try {
-			return printClass.newInstance();
-		} catch (InstantiationException | IllegalAccessException e) {
-			e.printStackTrace();
+		if(printClass != null){
+			try {
+				return printClass.newInstance();
+			} catch (InstantiationException | IllegalAccessException e) {
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}

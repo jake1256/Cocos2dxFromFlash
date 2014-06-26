@@ -19,15 +19,20 @@ import com.jake.ccxfromflash.util.Util;
  *
  */
 public class WriterLogic {
-	
+
 	private CCXVersionType verType;
 
 	public final boolean write(CCXVersionType verType , List<CCXObject> ccxObjectList){
 		boolean result = false;
 		this.verType = verType;
-		
+
 		StringBuilder createSb = createCcxCreateString(ccxObjectList);
 		StringBuilder createAnim = createCcxAction(ccxObjectList);
+
+		Util.print("");
+		Util.print(createSb.toString());
+		Util.print("");
+		Util.print(createAnim.toString());
 
 		result = writeFile(createSb, verType.getCreateFileName());
 		result = writeFile(createAnim, verType.getAnimFileName());
@@ -78,9 +83,7 @@ public class WriterLogic {
 				Util.appendStr(sb, verType.getCcxCC() + "Spawn::create(");
 
 				// delay time
-				if(actList.getDelayTimeList().size() > 1){
-					appendActionStr(sb, actList.getDelayTimeList(), name);
-				}
+				appendActionStr(sb, actList.getDelayTimeList(), name);
 				// move by
 				appendActionStr(sb, actList.getMoveByList(), name);
 
@@ -91,9 +94,7 @@ public class WriterLogic {
 				appendActionStr(sb, actList.getRotateToList(), name);
 
 				// scale to
-				if(actList.getScaleToList().size() > 1){
-					appendActionStr(sb, actList.getScaleToList(), name);
-				}
+				appendActionStr(sb, actList.getScaleToList(), name);
 
 //				// remove
 //				appendActionStr(sb, actList.getRemoveList(), name);
@@ -140,19 +141,19 @@ public class WriterLogic {
 	private void switchActionType(StringBuilder sb , CCXAction act , String name){
 		String duration = act.getDuration() + " / " + Util.round(Config.FPS);
 		switch(act.getActionType()) {
-			case DELAYTIME:
+			case DELAY_TIME:
 				Util.appendStr(sb , verType.getCcxCC() + "DelayTime::create(" + duration + "),");
 				break;
-			case MOVEBY:
+			case MOVE_BY:
 				Util.appendStr(sb , verType.getCcxCC() + "MoveBy::create(" + duration + " , " + verType.getCcxPos() + "(" + act.getPosX() + " , " + act.getPosY() + ")),");
 				break;
-			case SCALETO:
+			case SCALE_TO:
 				Util.appendStr(sb , verType.getCcxCC() + "ScaleTo::create(" + duration + " , " + act.getScaleX() + " , " + act.getScaleY()  + "),");
 				break;
-			case ROTATETO:
+			case ROTATE_BY:
 				Util.appendStr(sb , verType.getCcxCC() + "RotateBy::create(" + duration + " , " + act.getRotate() + "),");
 				break;
-			case FADETO:
+			case FADE_TO:
 				Util.appendStr(sb , verType.getCcxCC() + "FadeTo::create(" + duration + " , " + act.getAlpha() + "),");
 				break;
 			default:

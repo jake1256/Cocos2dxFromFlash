@@ -1,6 +1,11 @@
 package com.jake.ccxfromflash.util;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import com.jake.ccxfromflash.constants.Config;
 
@@ -13,6 +18,17 @@ public class Util {
 
 	// 改行コード
 	private static final String KAIGYOU = "\r\n";
+
+	public static void print(String print){
+		System.out.println(print);
+	}
+
+	public static void print(String print , int index){
+		for(int i = 0 ; i < index ; i++){
+			print = "\t" + print;
+		}
+		System.out.println(print);
+	}
 
 	/**
 	 * 有効桁で丸め込む
@@ -52,6 +68,16 @@ public class Util {
 	}
 
 	/**
+	 * XmlElementから指定した値をintで取得(デフォルト値あり
+	 * @param element
+	 * @param name
+	 * @return
+	 */
+	public static int getInt(Element element, String name , int defaultValue) {
+		return (int)Math.round(getDouble(element, name, defaultValue));
+	}
+
+	/**
 	 * XmlElementから指定した値をdoubleで取得(デフォルト値あり)
 	 * @param element
 	 * @param name
@@ -80,6 +106,9 @@ public class Util {
 			return 0.0;
 		}
 		String attribute = element.getAttribute(name);
+		if(attribute == null || "".equals(attribute)){
+			return 0.0;
+		}
 		return Double.parseDouble(attribute);
 	}
 
@@ -125,5 +154,23 @@ public class Util {
 		return Config.TOTAL_HEIGHT / 2;
 	}
 
+	/**
+	 * 使いにくいNodeListをList<Element>に変換する
+	 * @param nodeList
+	 * @return
+	 */
+	public static List<Element> changeList(NodeList nodeList){
+		List<Element> result = new ArrayList<>();
+
+		// nullによる例外が発生しにくくなるわけではなく、nullチェックが早くなるfailFast的な
+		Optional<NodeList> thisNodeList = Optional.of(nodeList); // nullだったらnullPointerExceptionが発生する
+		thisNodeList.ifPresent(list->{
+			for(int i = 0 ; i < list.getLength() ; i++){
+				result.add((Element)list.item(i)); // ぐぬぬ
+			}
+		});
+
+		return result;
+	}
 
 }

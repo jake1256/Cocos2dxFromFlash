@@ -24,19 +24,24 @@ public abstract class CCXPrintAbstract {
 					Util.roundSF((ccx.getPosY() - Util.getCenterH()) , 4) +
 					")";
 		}else{
-			switch(ccx.getPosType()){
-			case TOP:
-				positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
-				break;
-			case CENTER:
-				positionYStr = "(" + verType.getWinHeight() + " - 960) / 2 + " + ccx.getPosY();
-				break;
-			case BOTTOM:
+			if(ccx.getPosType() == null){
 				positionYStr = "" + ccx.getPosY();
-				break;
-			default:
-				positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
+			}else{
+				switch(ccx.getPosType()){
+				case TOP:
+					positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
+					break;
+				case CENTER:
+					positionYStr = "(" + verType.getWinHeight() + " - 960) / 2 + " + ccx.getPosY();
+					break;
+				case BOTTOM:
+					positionYStr = "" + ccx.getPosY();
+					break;
+				default:
+					positionYStr = verType.getWinHeight() + " - " + ccx.getPosY();
+				}
 			}
+			
 			return verType.getCcxPos() + "(" + ccx.getPosX() + ", " + positionYStr + ")";
 		}
 	}
