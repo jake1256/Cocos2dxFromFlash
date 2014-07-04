@@ -44,8 +44,9 @@ iphone5(640 x 1136)
 ###Support
 実行環境
 Windows , Mac OS で確認済
-実行には[Java](http://java.com/ja/download/)のインストールが必要です。
-(MacOSでは標準で搭載されています。)
+
+実行には[Java8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)のインストールが必要です。
+(それ以下のVersionでは動作しません。)
 
 対応Ver
 Flash CS5〜
