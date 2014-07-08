@@ -1,7 +1,7 @@
 package com.jake.ccxfromflash.main;
 
-
 import com.jake.ccxfromflash.ui.MainView;
+
 
 /**
  * 実行クラス

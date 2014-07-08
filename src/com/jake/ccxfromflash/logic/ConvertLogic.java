@@ -5,13 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.jake.ccxfromflash.constants.ActionType;
+import com.jake.ccxfromflash.constants.CCXLabelAlignment;
 import com.jake.ccxfromflash.logic.anim.AnimationLogic;
 import com.jake.ccxfromflash.model.ccx.CCXActionList;
+import com.jake.ccxfromflash.model.ccx.CCXLabel;
 import com.jake.ccxfromflash.model.ccx.CCXObject;
 import com.jake.ccxfromflash.model.dom.DOMFrame;
 import com.jake.ccxfromflash.model.dom.DOMLayer;
 import com.jake.ccxfromflash.model.dom.item.DOMItem;
 import com.jake.ccxfromflash.model.dom.obj.DOMObject;
+import com.jake.ccxfromflash.model.dom.obj.DOMStaticText;
 import com.jake.ccxfromflash.util.DOMCalc;
 import com.jake.ccxfromflash.util.Util;
 
@@ -55,6 +58,7 @@ public class ConvertLogic {
 
 			actions.forEach((anim)->{
 				AnimationLogic logic = anim.getAnimLogic();
+				Util.print("--- AnimationType[" + anim + "] ---");
 				logic.createAnimation(actionList , domLayer);
 			});
 
@@ -71,10 +75,16 @@ public class ConvertLogic {
 	 * @return
 	 */
 	private CCXObject initCCXObject(DOMLayer domLayer){
-		CCXObject ccx = new CCXObject();
+		CCXObject ccx = null;
 		DOMItem domItem = domLayer.getDomItem();
 		DOMFrame initDOMFrame = DOMCalc.findInitDOMFrame(domLayer.getDomFrameList());
 		DOMObject domObject = initDOMFrame.getDomObject();
+
+		if(domObject instanceof DOMStaticText){
+			ccx = convertStaticText(domObject);
+		}else{
+			ccx = new CCXObject();
+		}
 
 		ccx.setName( domLayer.getName() );
 		ccx.setIndex( initDOMFrame.getIndex() );
@@ -95,7 +105,17 @@ public class ConvertLogic {
 		return ccx;
 	}
 
-
+	private CCXObject convertStaticText(DOMObject domObject){
+		DOMStaticText domText = (DOMStaticText)domObject;
+		CCXLabel label = new CCXLabel();
+		label.setWidth(domText.getWidth());
+		label.setHeight(domText.getHeight());
+		label.setCharacters(domText.getCharacters());
+		label.setAlignment(CCXLabelAlignment.of(domText.getAlignment()));
+		label.setFontName(domText.getFontFace());
+		label.setSize(domText.getSize());
+		return label;
+	}
 
 //
 //	/**

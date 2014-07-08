@@ -39,6 +39,22 @@ public abstract class AnimationLogic {
 	 */
 	public abstract void setList(CCXActionList actionList , List<CCXAction> createActionList);
 
+	/**
+	 * 前が空白フレーム
+	 * @param preDom
+	 * @param dom
+	 * @return
+	 */
+	public CCXAction whiteFrameIsBefore(DOMFrame preDom , DOMFrame dom){ return null; }
+
+	/**
+	 * 次が空白フレーム
+	 * @param preDom
+	 * @param dom
+	 * @return
+	 */
+	public CCXAction whiteFrameIsNext(DOMFrame preDom , DOMFrame dom){ return null; }
+
 	public List<CCXAction> createAnimation(CCXActionList actionList , DOMLayer domLayer){
 		List<CCXAction> createActionList = new ArrayList<CCXAction>();
 		final DOMFrame initDom = findInitDOMFrame(domLayer.getDomFrameList());
@@ -61,18 +77,35 @@ public abstract class AnimationLogic {
 
 			DomObjectType objType = dom.getDomObject().getDomObjectType();
 
+			// 次が空白フレームだった
+			CCXAction whiteNext = whiteFrameIsNext(preDom, dom);
+			if(whiteNext != null){
+				createActionList.add(whiteNext);
+			}
+
+
 			// 最初が空白の場合
 			if(objType == DomObjectType.WHITE){
 				act = createDelayTime(dom.getDuration());
 			}
 			else{
 				act = createAction(preDom, dom);
+
+				// 前が空白フレームだった
+				CCXAction whiteBefore = whiteFrameIsBefore(preDom, dom);
+				if(whiteBefore != null){
+					createActionList.add(whiteBefore);
+				}
+
+
 				preDom = dom;
 			}
 
 			if(act != null){
 				createActionList.add(act);
 			}
+
+
 		}
 
 		// 最終待機を生成

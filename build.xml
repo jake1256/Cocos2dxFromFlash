@@ -3,12 +3,12 @@
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
-        <jar destfile="/Users/jake/Documents/git-workspace/java/Cocos2dxFromFlash/cocos2dxFromFlash.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="/Users/jake/Documents/bitbucket/cocos2dxfromflash/Cocos2dxFromFlash/cocos2dxFromFlash.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="com.jake.ccxfromflash.main.Main"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="/Users/jake/Documents/git-workspace/java/Cocos2dxFromFlash/bin"/>
+            <fileset dir="/Users/jake/Documents/bitbucket/cocos2dxfromflash/Cocos2dxFromFlash/bin"/>
         </jar>
     </target>
 </project>

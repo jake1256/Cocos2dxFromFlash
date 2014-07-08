@@ -54,10 +54,12 @@ public class WriterLogic {
 		String result = null;
 		for(int i = ccxObjectList.size() - 1 ; i > -1 ; i--){
 			ccx = ccxObjectList.get(i);
-			name = ccx.getName() + ((ccx.getIndex() == 0) ? "" : "_" + ccx.getIndex());
-			printCCX = ccx.getObjType().getPrintClass();
-			result = printCCX.print(ccx, name, verType);
-			sb.append(result);
+			if(ccx != null){
+				name = ccx.getName() + ((ccx.getIndex() == 0) ? "" : "_" + ccx.getIndex());
+				printCCX = ccx.getObjType().getPrintClass();
+				result = printCCX.print(ccx, name, verType);
+				sb.append(result);
+			}
 		}
 
 		return sb;
@@ -71,44 +73,46 @@ public class WriterLogic {
 	private StringBuilder createCcxAction(List<CCXObject> ccxObjectList){
 		StringBuilder sb = new StringBuilder();
 		for(CCXObject ccx : ccxObjectList){
-			CCXActionList actList = ccx.getActionList();
-			if(actList.isHasAction()){
-				String name = ccx.getName() + ((ccx.getIndex() == 0) ? "" : "_" + ccx.getIndex());
-				Util.appendStr(sb , name + "->runAction(");
-				if(Config.isRepeatForever){
-					Util.appendStr(sb, verType.getCcxCC() + "RepeatForever::create(");
-					Util.appendStr(sb, "(" + verType.getCcxCC() + "ActionInterval*)");
+			if(ccx != null){
+				CCXActionList actList = ccx.getActionList();
+				if(actList.isHasAction()){
+					String name = ccx.getName() + ((ccx.getIndex() == 0) ? "" : "_" + ccx.getIndex());
+					Util.appendStr(sb , name + "->runAction(");
+					if(Config.isRepeatForever){
+						Util.appendStr(sb, verType.getCcxCC() + "RepeatForever::create(");
+						Util.appendStr(sb, "(" + verType.getCcxCC() + "ActionInterval*)");
+					}
+
+					Util.appendStr(sb, verType.getCcxCC() + "Spawn::create(");
+
+					// delay time
+					appendActionStr(sb, actList.getDelayTimeList(), name);
+					// move by
+					appendActionStr(sb, actList.getMoveByList(), name);
+
+					// fade to
+					appendActionStr(sb, actList.getFadeToList(), name);
+
+					// rotate to
+					appendActionStr(sb, actList.getRotateToList(), name);
+
+					// scale to
+					appendActionStr(sb, actList.getScaleToList(), name);
+
+	//				// remove
+	//				appendActionStr(sb, actList.getRemoveList(), name);
+	//
+	//				// brendmode
+	//				appendActionStr(sb, actList.getBrendModeList(), name);
+
+
+					// CCSpawn閉じる
+					Util.appendStr(sb, "NULL)");
+					if(Config.isRepeatForever){
+						Util.appendStr(sb, ")");
+					}
+					Util.appendStr(sb, ");");
 				}
-
-				Util.appendStr(sb, verType.getCcxCC() + "Spawn::create(");
-
-				// delay time
-				appendActionStr(sb, actList.getDelayTimeList(), name);
-				// move by
-				appendActionStr(sb, actList.getMoveByList(), name);
-
-				// fade to
-				appendActionStr(sb, actList.getFadeToList(), name);
-
-				// rotate to
-				appendActionStr(sb, actList.getRotateToList(), name);
-
-				// scale to
-				appendActionStr(sb, actList.getScaleToList(), name);
-
-//				// remove
-//				appendActionStr(sb, actList.getRemoveList(), name);
-//
-//				// brendmode
-//				appendActionStr(sb, actList.getBrendModeList(), name);
-
-
-				// CCSpawn閉じる
-				Util.appendStr(sb, "NULL)");
-				if(Config.isRepeatForever){
-					Util.appendStr(sb, ")");
-				}
-				Util.appendStr(sb, ");");
 			}
 		}
 		return sb;

@@ -20,13 +20,6 @@ public class MoveByLogic extends AnimationLogic{
 	public CCXAction createAction(DOMFrame preDom, DOMFrame dom) {
 		CCXAction act = null;
 
-		Util.print("--- preDom ---");
-		preDom.print(0);
-		Util.print("");
-		Util.print("--- dom ---");
-		dom.print(0);
-		Util.print("");
-
 		DOMMatrix preMatrix = preDom.getDomObject().getMatrix();
 		DOMMatrix matrix = dom.getDomObject().getMatrix();
 

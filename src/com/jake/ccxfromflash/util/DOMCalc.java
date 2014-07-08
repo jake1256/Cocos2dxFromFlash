@@ -102,7 +102,7 @@ public class DOMCalc {
 		double baseValueX = 0.0;
 		double baseValueY = 1.0;
 
-		if(dom != null){
+		if(dom != null && dom instanceof DOMSymbolItem){
 			DOMSymbolItem domSymbolItem = (DOMSymbolItem)dom;
 
 			DOMObject domObject = domFrame.getDomObject();
