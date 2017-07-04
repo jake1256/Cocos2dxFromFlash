@@ -19,7 +19,6 @@
 *.exe
 *.out
 *.app
-*.bin
 
 bin/
 .DS_Store
